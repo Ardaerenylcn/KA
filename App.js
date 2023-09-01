@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
 import CustomerInfo from "./Screens/CustomerInfoPage"
+import CustomerInfoDetailPage from './Screens/CustomerInfoDetailPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,9 +23,7 @@ function Customer() {
 
 function ProfileScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Profile Screen</Text>
-    </View>
+   <CustomerInfoDetailPage/>
   );
 }
 

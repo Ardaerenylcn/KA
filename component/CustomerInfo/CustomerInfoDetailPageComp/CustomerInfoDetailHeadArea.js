@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaView, ScrollView, Button } from 'react-native';
+import { StyleSheet, View, SafeAreaView, ScrollView, Button ,Text} from 'react-native';
 
 
 const CustomerInfoDetail = ({customerInfoDetailCustomerID
@@ -12,3 +12,5 @@ const CustomerInfoDetail = ({customerInfoDetailCustomerID
             </View>
             )
     }
+
+    export default CustomerInfoDetail;
