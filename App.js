@@ -3,21 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
-
+import CustomerInfo from "./Screens/CustomerInfoPage"
 
 const Tab = createBottomTabNavigator();
 
 function Duyurular() {
   return (
-      <Announcement/>
+    <Announcement />
   );
 }
 
-function SettingsScreen() {
+
+function Customer() {
   return (
-    <View style={styles.container}>
-      <Text>Settings Screen</Text>
-    </View>
+    <CustomerInfo/>
   );
 }
 
@@ -39,12 +38,12 @@ function MyTabs() {
           tabBarLabel: 'Duyurular',
         }}
       />
-      <Tab.Screen name="Settings" component={SettingsScreen}options={{
-          tabBarLabel: 'Profilim',
-        }} />
+      <Tab.Screen name="Settings" component={Customer} options={{
+        tabBarLabel: 'Müşteri Bilgileri',
+      }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{
-          tabBarLabel: 'Nerdeyim',
-        }}/>
+        tabBarLabel: 'Nerdeyim',
+      }} />
     </Tab.Navigator>
   );
 }
@@ -52,7 +51,7 @@ function MyTabs() {
 const App = () => {
   return (
     <NavigationContainer>
-      <MyTabs/>
+      <MyTabs />
     </NavigationContainer>
   );
 }
