@@ -1,20 +1,19 @@
-import { View, Text, } from 'react-native'
+import { View, Text,Animated } from 'react-native'
 import React from 'react'
 import CustomerInfoDetailHeadArea from "../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailHeadArea"
-
+import CustoemrInfoDetailBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea';
 const CustomerInfoDetailPage = () => {
     return (
         <><CustomerInfoDetailHeadArea
-            customerInfoDetailCustomerID="4312RU3M18"
+            customerInfoDetailCustomerID="SJ12RU3M18"
             customerInfoDetailCustomerNAME="MMM Migros Ümraniye"
             customerInfoDetailCustomerLogin="1 Eylül 14:23" />
             
-            <CustomerInfoDetailHeadArea
-                customerInfoDetailCustomerID="1234"
-                customerInfoDetailCustomerNAME="RIDO"
-                customerInfoDetailCustomerLogin="SALI" /></>
-    )
-}
+            
+            <CustoemrInfoDetailBodyArea/></>
+          )
+    };
+
 
 
 
