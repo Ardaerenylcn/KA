@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
 import CustomerInfo from "./Screens/CustomerInfoPage"
 import CustomerInfoDetailPage from './Screens/CustomerInfoDetailPage';
-
+import CustomerInfoPageNavigate from './Screens/CustomerInfoPage';
 const Tab = createBottomTabNavigator();
 
 function Duyurular() {

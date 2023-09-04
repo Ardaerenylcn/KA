@@ -11,7 +11,9 @@ import CustomerProgres from './CustomerProgres';
 
 
 
-export default function App() {
+
+
+function CustomerInfoPage() {
 
   return (
 
@@ -68,6 +70,20 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+const Stack = createNativeStackNavigator();
+
+function CustomerInfoPageNavigate() {
+  return (
+
+    <Stack.Navigator>
+      <Stack.Screen name="Page" component={CustomerInfoPage} />
+    </Stack.Navigator>
+
+  );
+}
+
+export default CustomerInfoPageNavigate;
 
 const styles = StyleSheet.create({
   container: {
