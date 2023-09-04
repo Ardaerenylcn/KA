@@ -8,9 +8,10 @@ const CustomerInfoDetailPage = () => {
             customerInfoDetailCustomerID="SJ12RU3M18"
             customerInfoDetailCustomerNAME="MMM Migros Ümraniye"
             customerInfoDetailCustomerLogin="1 Eylül 14:23" />
+            <CustoemrInfoDetailBodyArea
+            CustoemrInfoDetailBodyAreaRow="Test"
             
-            
-            <CustoemrInfoDetailBodyArea/></>
+            /></>
           )
     };
 
