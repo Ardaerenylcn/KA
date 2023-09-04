@@ -4,24 +4,15 @@ import { StatusBar } from 'expo-status-bar';
 import CustomerInfoRow from "../component/CustomerInfo/CustomerInfoRow"
 import CustomerInfoTiltle from "../component/CustomerInfo/CustomerInfoTiltle"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import CustomerProgres from './CustomerProgres';
-
-
-
-
-
-
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import CustomerInfoDetailPage from './CustomerInfoDetailPage';
 
 function CustomerInfoPage() {
+  const navigation = useNavigation();
 
   return (
-
-
-
     <SafeAreaView style={styles.SafeAreaView}>
-
-
+      <Button style={styles.CustomerInfoDetailPageNavigateButton} title="Müşteri işlemleri" onPress={() => navigation.navigate('Müşteri İşlemleri')} />
 
       <ScrollView>
         <View style={styles.header}>
@@ -49,8 +40,6 @@ function CustomerInfoPage() {
           <CustomerInfoRow title="KA Merkez Müdürü" desc="Ulusal Zincir Mağzalar Özgür Zümrüt" />
           <CustomerInfoRow title="KA Saha Müdürü" desc=" İst-Haliç Ulusal Zincir Mağzalar ONUR KAYADELEN" />
 
-
-
           <CustomerInfoTiltle generalTitle="Organizasyon" />
           <CustomerInfoRow title="Telefon No." desc="00003" />
           <CustomerInfoRow title="Telefon No." desc="00003" />
@@ -64,9 +53,6 @@ function CustomerInfoPage() {
         </View>
       </ScrollView>
       <StatusBar style="auto" />
-
-
-
     </SafeAreaView>
   );
 }
@@ -77,9 +63,9 @@ function CustomerInfoPageNavigate() {
   return (
 
     <Stack.Navigator>
-      <Stack.Screen name="Page" component={CustomerInfoPage} />
+      <Stack.Screen name="Müşteri bilgilgileri" component={CustomerInfoPage} />
+      <Stack.Screen name='Müşteri İşlemleri' component={CustomerInfoDetailPage} />
     </Stack.Navigator>
-
   );
 }
 
@@ -95,7 +81,8 @@ const styles = StyleSheet.create({
   },
   CustomerInfoPageNextButton: {
 
-
+  },
+  CustomerInfoDetailPageNavigateButton: {
+    backgroundColor: "red"
   }
-
 });

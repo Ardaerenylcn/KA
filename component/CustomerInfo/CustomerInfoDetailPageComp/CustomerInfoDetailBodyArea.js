@@ -33,7 +33,7 @@ const CustoemrInfoDetailBodyArea = ({}) => {
 
 const styles = StyleSheet.create({
   CustoemrInfoDetailBodyArea_Container: {
-    flexDirection: "row",
+    flexDirection: "cloum",
     backgroundColor: "#f0f0f0",
     marginVertical: 30,
     marginHorizontal: 10,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   dropdownButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#ccc',
     borderRadius: 10,
     padding: 10,
   },

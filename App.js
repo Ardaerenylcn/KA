@@ -4,8 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
 import CustomerInfo from "./Screens/CustomerInfoPage"
-import CustomerInfoDetailPage from './Screens/CustomerInfoDetailPage';
-import CustomerInfoPageNavigate from './Screens/CustomerInfoPage';
+
 const Tab = createBottomTabNavigator();
 
 function Duyurular() {
@@ -23,7 +22,7 @@ function Customer() {
 
 function ProfileScreen() {
   return (
-   <CustomerInfoDetailPage/>
+ null
   );
 }
 
@@ -37,7 +36,7 @@ function MyTabs() {
           tabBarLabel: 'Duyurular',
         }}
       />
-      <Tab.Screen name="Settings" component={Customer} options={{
+      <Tab.Screen name=" " component={Customer} options={{
         tabBarLabel: 'Müşteri Bilgileri',
       }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{
@@ -55,13 +54,5 @@ const App = () => {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
