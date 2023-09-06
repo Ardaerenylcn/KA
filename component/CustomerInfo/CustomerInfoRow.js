@@ -1,5 +1,8 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import colors from "../../constants/colors";
+import distances from "../../constants/distances";
+import fonts from "../../constants/fonts";
 
 const CustomerInfoRow = ({ title, desc }) => {
   return (
@@ -14,24 +17,24 @@ const CustomerInfoRow = ({ title, desc }) => {
 
 const styles = StyleSheet.create({
   CustomerInfoRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: distances.defaultDistance,
+    paddingVertical: distances.halfDistance,
+    borderBottomWidth: 0.5,
+    borderBottomColor: colors.borderColor,
   },
   CustomerInfoRowtitle: {
-    fontSize: 16,
-
-    flex: 1, 
+    fontSize: fonts.normal,
+    flex: 1,
+    
   },
   decContainer: {
-    flex: 1, 
-    alignItems: 'flex-end', 
+    flex: 1,
+    alignItems: "flex-end",
   },
   dec: {
-    color: '#bcbcbc',
+    color: colors.grey3,
   },
 });
 
