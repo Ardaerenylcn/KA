@@ -1,4 +1,4 @@
-// CustomerInfoHead.js
+
 
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
@@ -7,7 +7,7 @@ import colors from "../../constants/colors";
 import distances from "../../constants/distances";
 import fonts from "../../constants/fonts";
 import { Entypo } from "@expo/vector-icons";
-import fontFamilies from "../../constants/fontFamilies";
+
 
 const CustomerInfoHead = ({
   customerInfoStoreCode,
@@ -15,6 +15,7 @@ const CustomerInfoHead = ({
   customerInfoStoreName,
   customerInfoStoreFullName,
   customerInfoStoreIsFalse,
+
 }) => {
   return (
     <View style={styles.CustomerInfoDetailPageNavigateButtonBackground}>
@@ -27,9 +28,9 @@ const CustomerInfoHead = ({
           />
         </View>
         <View>
-          <Text style={{fontWeight:"bold"}}>{customerInfoStoreCode}</Text>
-          <Text>{customerInfoStoreName}</Text>
-          <Text>{customerInfoStoreFullName}</Text>
+          <Text style={styles.customerInfoStoreCode}>{customerInfoStoreCode}</Text>
+          <Text style={styles.customerInfoStoreNAME}>{customerInfoStoreName}</Text>
+          <Text >{customerInfoStoreFullName}</Text>
           <View>
   {customerInfoStoreIsFalse ? (
     <View style={styles.customerInfoStoreIsFalse}>
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
+    marginBottom:distances.doubleDistance
   },
   navigationButtonText: {
     color: colors.white,
@@ -75,19 +77,21 @@ const styles = StyleSheet.create({
   },
   CustomerInfoDetailPageNavigateButtonBackground: {
     backgroundColor: colors.white,
-    height: "22%",
+    height: "20%",
     alignItems: "flex-start",
     justifyContent: "flex-end",
     borderBottomWidth: 1,
     borderBottomColor: colors.borderColor,
-    marginTop:distances.defaultDistance,
+    marginTop:distances.doubleDistance,
+    
   },
   CustomerInfoDetailPageNavigateButtonarea: {
     marginHorizontal: distances.doubleDistance * 1.5,
-    marginVertical: distances.defaultDistance,
   },
   customerInfoDetailPageHeadTextStyle: {
     flexDirection: "row",
+
+
   },
   customerInfoDetailPageHeadIcon: {
     justifyContent: "flex-end",
@@ -101,20 +105,31 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    padding: 5,
+    marginTop:distances.halfDistance
+
+
   },
   customerInfoStoreIsTrue: {
     backgroundColor:colors.green,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    padding: 5,
+    marginTop:distances.halfDistance,
+    padding: 3,
     width:100,
+
   },
   customerInfoStoreText: {
     color: colors.white,
-
+    fontWeight:"bold"
   },
+  customerInfoStoreCode:{
+  fontWeight:"bold",
+  },
+  customerInfoStoreNAME:{
+    marginBottom:distances.quarterDistance
+  },
+
   
   
 });

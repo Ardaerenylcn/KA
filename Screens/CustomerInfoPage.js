@@ -31,7 +31,6 @@ function CustomerInfoPage({ navigation }) {
         customerInfoStoreFullName="MİGROS TİCARET A.Ş"
         navigation={navigation}
         customerInfoStoreIsFalse=""
-
       />
 
       <ScrollView>
@@ -68,18 +67,35 @@ function CustomerInfoPage({ navigation }) {
             title="KA Saha Müdürü"
             desc=" İst-Haliç Ulusal Zincir Mağzalar ONUR KAYADELEN"
           />
+          <CustomerInfoRow
+            title="KA Yönteicisi"
+            desc=" İst-Haliç Ulusal Zincir Mağzalar SABRİ EKRAN AKAN"
+          />
+
+          <CustomerInfoRow
+            title="Müşteri Özel Bölge"
+            desc=" MARMARA BÖLGESİ"
+          />
 
           <CustomerInfoTiltle generalTitle="Organizasyon" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+
           <CustomerInfoTiltle generalTitle="Ek veriler" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
-          <CustomerInfoRow title="Telefon No." desc="00003" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+          <CustomerInfoRow title="Veri" desc="VERİ" />
+
         </View>
+        <View style={styles.CustomerInfoPageScrollView}></View>
       </ScrollView>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -111,6 +127,8 @@ const styles = StyleSheet.create({
   SafeAreaView: {
     flex: 1,
     backgroundColor: colors.white,
-    
+  },
+  CustomerInfoPageScrollView: {
+    borderBottomWidth: 0.7,
   },
 });
