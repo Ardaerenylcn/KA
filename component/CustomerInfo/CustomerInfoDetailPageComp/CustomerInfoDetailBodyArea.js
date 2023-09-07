@@ -1,75 +1,57 @@
-import React, { useState } from "react";
-import colors from "../../../constants/colors";
+/* eslint-disable no-empty-pattern */
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable no-use-before-define */
+import React, { useState } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-} from "react-native";
-import SelectDropdown from "react-native-select-dropdown";
+} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Import Font Awesome Icon
+import colors from '../../../constants/colors';
+import distances from '../../../constants/distances';
 
 const CustoemrInfoDetailBodyArea = ({}) => {
-  const [selectedItem, setSelectedItem] = useState("");
+  const [selectedItem, setSelectedItem] = useState('');
 
   const data = [
-    "Seçenek 1",
-    "Seçenek 2",
-    "Seçenek 3",
-    "Seçenek 4",
-    "Seçenek 5",
+    'Ziyaret Listesi',
+    'Soğutucu Envanteri',
+    'Soğutucu Ekipman Sayımı',
+    'Soğutucu işlemleri',
   ];
-
-  const touchableOpacityStyle = styles.CustoemrInfoDetailBodyAreaRow;
-
   return (
-    <ScrollView>
-      <View style={styles.CustoemrInfoDetailBodyArea_Container}>
-        <TouchableOpacity style={touchableOpacityStyle}>
-          <Text style={styles.label}>Ziyaret Listesi</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={touchableOpacityStyle}>
-          <Text style={styles.label}>Soğutucu Envanteri</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={touchableOpacityStyle}>
-          <Text style={styles.label}>Soğutucu Ekipman Sayımı</Text>
-        </TouchableOpacity>
+    <View style={styles.CustomerInfoDetailBodyAreaContainer}>
+      <View style={styles.CustomerInfoDetailBodyAreaContainerMini}>
+        {data.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              styles.listItem,
+              index === data.length - 1 && styles.lastListItem,
+            ]}
+            onPress={() => {
 
-        <TouchableOpacity style={touchableOpacityStyle}>
-          <Text style={styles.label}>Soğutucu işlemleri {selectedItem}</Text>
-        </TouchableOpacity>
-
-        <SelectDropdown
-          data={data}
-          buttonStyle={styles.dropdownButton}
-          onSelect={(selectedItem, index) => {
-            setSelectedItem(selectedItem);
-          }}
-          defaultButtonText=">"
-          defaultButtonTextStyle={styles.defaultButtonTextStyle}
-          buttonTextAfterSelection={(selectedItem, index) => {
-            return selectedItem;
-          }}
-          rowTextForSelection={(item, index) => {
-            return item;
-          }}
-        />
+            }}
+          >
+            <Text style={styles.listItemText}>{item}</Text>
+            <Icon name="angle-right" size={20} color={colors.grey3} />
+          </TouchableOpacity>
+        ))}
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  CustoemrInfoDetailBodyArea_Container: {
-    flexDirection: "column",
-    backgroundColor: colors.grey,
-    marginVertical: 30,
-    marginHorizontal: 10,
-    borderRadius: 5,
-    minHeight: 50,
-    justifyContent: "space-between",
-    alignItems: "center",
-    shadowColor: "#000",
+  CustomerInfoDetailBodyAreaContainer: {
+    paddingVertical: distances.defaultDistance,
+    backgroundColor: colors.grey4,
+    margin: distances.defaultDistance,
+    borderRadius: distances.quarterDistance,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -77,24 +59,25 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
-    padding: 10,
   },
-  label: {
-    fontSize: 18,
-    marginBottom: 10,
+  CustomerInfoDetailBodyAreaContainerMini: {
+    padding: distances.defaultDistance,
+    marginHorizontal: distances.defaultDistance,
   },
-  dropdownButton: {
-    backgroundColor: colors.navyblue, 
-    borderRadius: 10,
-    padding: 10,
+  listItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 0.3,
+    borderBottomColor: colors.grey3,
+    paddingVertical: 10,
   },
-  CustoemrInfoDetailBodyAreaRow: {
-    fontSize: 22,
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.borderColor, 
-    marginBottom: 10,
-    width: "100%",
+  lastListItem: {
+    borderBottomWidth: 0, // Remove border from the last item
+  },
+  listItemText: {
+    fontSize: 16,
+    marginRight: 10,
   },
 });
 
