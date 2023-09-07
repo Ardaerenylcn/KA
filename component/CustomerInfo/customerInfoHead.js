@@ -1,13 +1,13 @@
-
-
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import React from "react";
-import colors from "../../constants/colors";
-import distances from "../../constants/distances";
-import fonts from "../../constants/fonts";
-import { Entypo } from "@expo/vector-icons";
-
+/* eslint-disable no-use-before-define */
+import {
+  View,
+  Text, StyleSheet, TouchableOpacity,
+} from 'react-native';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
+import React from 'react';
+import colors from '../../constants/colors';
+import distances from '../../constants/distances';
+import fonts from '../../constants/fonts';
 
 const CustomerInfoHead = ({
   customerInfoStoreCode,
@@ -32,23 +32,23 @@ const CustomerInfoHead = ({
           <Text style={styles.customerInfoStoreNAME}>{customerInfoStoreName}</Text>
           <Text >{customerInfoStoreFullName}</Text>
           <View>
-  {customerInfoStoreIsFalse ? (
-    <View style={styles.customerInfoStoreIsFalse}>
-      <Text style={styles.customerInfoStoreText}>Onaylanmamış</Text>
+            {customerInfoStoreIsFalse ? (
+              <View style={styles.customerInfoStoreIsFalse}>
+                <Text style={styles.customerInfoStoreText}>Onaylanmamış</Text>
     </View>
   ) : (
     <View style={styles.customerInfoStoreIsTrue}>
       <Text style={styles.customerInfoStoreText}>Onaylı</Text>
     </View>
   )}
-</View>
+          </View>
         </View>
       </View>
 
       <View style={styles.CustomerInfoDetailPageNavigateButtonarea}>
         <TouchableOpacity
           style={styles.CustomerInfoDetailPageNavigateButton}
-          onPress={() => navigation.navigate("Müşteri İşlemleri")}
+          onPress={() => navigation.navigate('Müşteri İşlemleri')}
         >
           <FontAwesome name="info-circle" size={24} color="white" />
           <Text style={styles.navigationButtonText}>Müşteri İşlemleri</Text>
@@ -63,12 +63,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.more,
     borderRadius: distances.halfDistance,
     padding: distances.halfDistance,
-    alignSelf: "center",
+    alignSelf: 'center',
     margin: distances.halfDistance,
     width: 180,
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
     marginBottom:distances.doubleDistance
   },
   navigationButtonText: {
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
   },
   CustomerInfoDetailPageNavigateButtonBackground: {
     backgroundColor: colors.white,
-    height: "20%",
-    alignItems: "flex-start",
-    justifyContent: "flex-end",
+    height: '20%',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
     borderBottomWidth: 1,
     borderBottomColor: colors.borderColor,
     marginTop:distances.doubleDistance,
@@ -89,12 +89,12 @@ const styles = StyleSheet.create({
     marginHorizontal: distances.doubleDistance * 1.5,
   },
   customerInfoDetailPageHeadTextStyle: {
-    flexDirection: "row",
+    flexDirection: 'row',
 
 
   },
   customerInfoDetailPageHeadIcon: {
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
     marginHorizontal: distances.defaultDistance,
   },
   customerInfoDetailPageHeadIconStyle: {
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
   customerInfoStoreIsFalse: {
     backgroundColor: colors.red,
     borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop:distances.halfDistance
 
 
@@ -112,8 +112,8 @@ const styles = StyleSheet.create({
   customerInfoStoreIsTrue: {
     backgroundColor:colors.green,
     borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop:distances.halfDistance,
     padding: 3,
     width:100,
@@ -121,10 +121,10 @@ const styles = StyleSheet.create({
   },
   customerInfoStoreText: {
     color: colors.white,
-    fontWeight:"bold"
+    fontWeight:'bold'
   },
   customerInfoStoreCode:{
-  fontWeight:"bold",
+  fontWeight:'bold',
   },
   customerInfoStoreNAME:{
     marginBottom:distances.quarterDistance

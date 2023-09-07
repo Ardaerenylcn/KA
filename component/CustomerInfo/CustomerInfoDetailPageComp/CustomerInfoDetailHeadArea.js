@@ -1,103 +1,145 @@
-import { FontAwesome } from "@expo/vector-icons";
-import React from "react";
+import React from 'react';
 import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  ScrollView,
-  Button,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import CustomerInfoHead from "../customerInfoHead";
-import colors from "../../../constants/colors";
-import distances from "../../../constants/distances";
-import fonts from "../../../constants/fonts";
+	StyleSheet,
+	View,
+	SafeAreaView,
+	Text,
+	TouchableOpacity,
+	ScrollView,
+} from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import colors from '../../../constants/colors';
+import distances from '../../../constants/distances';
+import fonts from '../../../constants/fonts';
 
 const CustomerInfoDetailHeadArea = ({
-  customerInfoDetailCustomerID,
-  customerInfoDetailCustomerNAME,
-  customerInfoDetailCustomerLogin,
+	customerInfoDetailCustomerID,
+	customerInfoDetailCustomerNAME,
+	customerInfoDetailCustomerDİSTANCE,
+	customerInfoDetailCustomerLogin,
 }) => {
-  return (
-    <SafeAreaView style={styles.SafeAreaView}>
-      <View style={styles.CustomerInfoDetailHeadAreaContainer}>
-        <View style={styles.customerInfoDetailHeadAreaContainerTextSide}>
-        <View style={styles.customerInfoDetailHeadAreaContainerTextSideOne}>
+	return (
 
-          <Text>{customerInfoDetailCustomerID}</Text>
-          </View>
-        </View>
-        <View style={styles.customerInfoDetailHeadAreaContainerTextSideTwo}>
-          <Text>{customerInfoDetailCustomerNAME}</Text>
-          <Text>{customerInfoDetailCustomerLogin}</Text>
-        </View>
+			<SafeAreaView style={styles.SafeAreaView}>
+				<View style={styles.customerInfoDetailHeadAreaContainer}>
+					<View
+						style={styles.customerInfoDetailHeadAreaContainerIDandVisitButton}
+					>
+						<Text style={styles.customerInfoDetailCustomerID}>
+							{customerInfoDetailCustomerID}
+						</Text>
 
-        <View style={styles.customerInfoHeadAreaButtonWiev}>
-          <TouchableOpacity style={styles.customerInfoHeadAreaButton}>
-            <FontAwesome
-              style={styles.customerInfoHeadAreaButtonIcon}
-              size={22}
-              color={"white"}
-              name="location-arrow"
-            />
-            <Text style={styles.customerInfoHeadAreaButtonText}>TARİF</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+						<TouchableOpacity
+							style={styles.customerInfoDetailHeadAreaContainerVisitButton}
+						>
+							<FontAwesome name="location-arrow" color="white" size={16} />
+							<Text
+								style={
+									styles.customerInfoDetailHeadAreaContainerVisitButtonText
+								}
+							>
+								Tarif
+							</Text>
+						</TouchableOpacity>
+					</View>
+
+					<View>
+						<Text style={styles.customerInfoDetailHeadLeftSide}>
+							{customerInfoDetailCustomerNAME}
+						</Text>
+					</View>
+					<View style={styles.customerInfoDetailHeadLeftSide}>
+						<FontAwesome name="location-arrow" color="gray" />
+						<Text style={styles.customerInfoDetailCustomerDistanceText}>
+							{' '}
+							{customerInfoDetailCustomerDİSTANCE} mt
+						</Text>
+					</View>
+					<View
+						style={[
+							styles.customerInfoDetailHeadLeftSide,
+							styles.visitEntryView,
+						]}
+					>
+						<View style={styles.visitEntry}>
+							<FontAwesome name="map-pin" color="white" />
+
+							<TouchableOpacity>
+								<Text style={styles.visitEntryText}> Ziyaret Girişi</Text>
+							</TouchableOpacity>
+						</View>
+					</View>
+					<View style={styles.customerInfoDetailHeadLeftSide}>
+						<Text>Son Ziyaret: {customerInfoDetailCustomerLogin}</Text>
+					</View>
+      
+				</View>
+        
+			</SafeAreaView>
+
+	);
 };
 
 const styles = StyleSheet.create({
-  SafeAreaView: {
-    flex: 1,
-  },
-  CustomerInfoDetailHeadAreaContainer: {
-    flexDirection: "row",
-    backgroundColor: colors.grey4,
-    marginVertical: 30,
-    marginHorizontal: 10,
-    borderRadius: 5,
-    minHeight: 50,
-    justifyContent: "space-between",
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  CustomerInfoDetailHeadAreaMiniContainer: {
-    backgroundColor: colors.grey3,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  customerInfoHeadAreaButtonWiev: {
-    backgroundColor: colors.lightblue,
-    borderRadius: 4,
-    padding: distances.quarterDistance / 2,
-    marginHorizontal: distances.quarterDistance,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  customerInfoHeadAreaButton: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  customerInfoHeadAreaButtonIcon: {
-    marginRight: distances.quarterDistance,
-  },
-  customerInfoHeadAreaButtonText: {
-    color: colors.white,
-  },
-  customerInfoDetailHeadAreaContainerTextSide: {
-    marginLeft: distances.doubleDistance,
-  },
+	customerInfoDetailHeadAreaContainer: {
+    paddingVertical:distances.defaultDistance,
+		backgroundColor: colors.grey4,
+		margin: distances.defaultDistance,
+		borderRadius: distances.quarterDistance,
+		shadowOffset: {
+			width: 0,
+			height: 2,
+		},
+		shadowOpacity: 0.3,
+		shadowRadius: 4,
+		elevation: 5,
+	},
+	customerInfoDetailHeadAreaContainerIDandVisitButton: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		marginHorizontal: distances.defaultDistance,
+		marginTop: distances.defaultDistance,
+	},
+	customerInfoDetailHeadAreaContainerVisitButton: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		backgroundColor: colors.lightblue,
+		paddingHorizontal: distances.halfDistance,
+		borderRadius: 5,
+	},
+	customerInfoDetailHeadAreaContainerVisitButtonText: {
+		color: colors.white,
+		fontSize: fonts.normal,
+		marginLeft: 5,
+    padding:2,
+	},
+	customerInfoDetailHeadLeftSide: {
+		marginHorizontal: distances.defaultDistance * 2,
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginVertical: distances.quarterDistance / 4,
+	},
+	visitEntry: {
+		backgroundColor: colors.navyblue,
+		flexDirection: 'row',
+		alignItems: 'center',
+		borderRadius: 5,
+		paddingHorizontal: distances.quarterDistance,
+		paddingVertical: distances.quarterDistance / 2,
+	},
+	visitEntryText: {
+		color: colors.white,
+		fontSize: fonts.small,
+	},
+	visitEntryView: {
+		marginTop: distances.defaultDistance,
+	},
+	customerInfoDetailCustomerDistanceText: {
+		fontSize: fonts.small,
+	},
+	customerInfoDetailCustomerID: {
+		marginHorizontal: distances.defaultDistance,
+	},
 });
 
 export default CustomerInfoDetailHeadArea;

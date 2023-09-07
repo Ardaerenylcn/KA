@@ -1,15 +1,22 @@
-import { View, Text, Animated } from "react-native";
-import React from "react";
-import CustomerInfoDetailHeadArea from "../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailHeadArea";
-import CustoemrInfoDetailBodyArea from "../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea";
+import { View, Text, Animated,ScrollView } from 'react-native';
+import React from 'react';
+import CustomerInfoDetailHeadArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailHeadArea';
+import CustoemrInfoDetailBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea';
+
 const CustomerInfoDetailPage = () => {
-  return (
-      <CustomerInfoDetailHeadArea
-        customerInfoDetailCustomerID="SJ12RU3M18"
-        customerInfoDetailCustomerNAME="MMM Migros Ümraniye"
-        customerInfoDetailCustomerLogin="1 Eylül 14:23"
-      />
-  );
+	return (
+    <ScrollView>
+		<>
+			<CustomerInfoDetailHeadArea
+				customerInfoDetailCustomerID="280025"
+				customerInfoDetailCustomerNAME="GALLERİA MMM Migros"
+				customerInfoDetailCustomerLogin="26.05.2023 - Cuma"
+				customerInfoDetailCustomerDİSTANCE="22217"
+			/>
+			<CustoemrInfoDetailBodyArea/>
+		</>
+    </ScrollView>
+	);
 };
 
 export default CustomerInfoDetailPage;
