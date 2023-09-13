@@ -47,10 +47,7 @@ const CustomerInfoDetailHeadArea = ({
 				</View>
 				<View style={styles.customerInfoDetailHeadLeftSide}>
 					<FontAwesome name="location-arrow" color="gray" />
-					<Text style={styles.customerInfoDetailCustomerDistanceText}>
-						{' '}
-						{customerInfoDetailCustomerDİSTANCE} mt
-					</Text>
+					<Text> {customerInfoDetailCustomerDİSTANCE} mt</Text>
 				</View>
 				<View
 					style={[styles.customerInfoDetailHeadLeftSide, styles.visitEntryView]}
@@ -64,7 +61,9 @@ const CustomerInfoDetailHeadArea = ({
 					</TouchableOpacity>
 				</View>
 				<View style={styles.customerInfoDetailHeadLeftSide}>
-					<Text>Son Ziyaret: {customerInfoDetailCustomerLogin}</Text>
+					<Text style={styles.customerInfoDetailHeadLeftSideCustomerLogin}>
+						Son Ziyaret: {customerInfoDetailCustomerLogin}
+					</Text>
 				</View>
 			</View>
 		</SafeAreaView>
@@ -74,7 +73,7 @@ const CustomerInfoDetailHeadArea = ({
 const styles = StyleSheet.create({
 	customerInfoDetailHeadAreaContainer: {
 		paddingVertical: distances.defaultDistance,
-		backgroundColor: colors.grey4,
+		backgroundColor: colors.white,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
 		shadowOffset: {
@@ -100,7 +99,6 @@ const styles = StyleSheet.create({
 	},
 	customerInfoDetailHeadAreaContainerVisitButtonText: {
 		color: colors.white,
-		fontSize: fonts.normal,
 		marginLeft: 5,
 		padding: 2,
 	},
@@ -109,6 +107,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		marginVertical: distances.quarterDistance / 4,
+		fontSize: fonts.big,
 	},
 	visitEntry: {
 		backgroundColor: colors.navyblue,
@@ -117,19 +116,20 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		paddingHorizontal: distances.quarterDistance,
 		paddingVertical: distances.quarterDistance / 2,
+		fontSize: fonts.normal,
 	},
 	visitEntryText: {
 		color: colors.white,
-		fontSize: fonts.small,
 	},
 	visitEntryView: {
 		marginTop: distances.defaultDistance,
 	},
-	customerInfoDetailCustomerDistanceText: {
-		fontSize: fonts.small,
-	},
 	customerInfoDetailCustomerID: {
 		marginHorizontal: distances.defaultDistance,
+		fontSize: fonts.big,
+	},
+	customerInfoDetailHeadLeftSideCustomerLogin: {
+		fontSize: fonts.big,
 	},
 });
 
