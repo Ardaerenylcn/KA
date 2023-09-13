@@ -34,6 +34,8 @@ const App = () => {
 
 	const viewWidth = Dimensions.get('window').width;
 
+	let iconName = isExpanded ? 'angle-down' : 'angle-right';
+
 	return (
 		<View style={styles.container}>
 			<ScrollView style={styles.listContainer}>
@@ -47,12 +49,21 @@ const App = () => {
 						onPress={() => handleItemPress(item)}
 					>
 						<Text style={styles.text}>{item.text}</Text>
-						<Icon
-							name={item.icon}
-							size={20}
-							color="black"
-							style={styles.icon}
-						/>
+						{item.text === 'Soğutucu İşlemleri' ? (
+							<Icon
+								name={iconName}
+								size={20}
+								color="black"
+								style={styles.icon}
+							/>
+						) : (
+							<Icon
+								name={item.icon}
+								size={20}
+								color="black"
+								style={styles.icon}
+							/>
+						)}
 					</TouchableOpacity>
 				))}
 			</ScrollView>
@@ -80,7 +91,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: 'white',
+		backgroundColor: colors.white,
 		padding: distances.defaultDistance,
 		margin: distances.defaultDistance,
 		borderRadius: 10,
@@ -124,7 +135,7 @@ const styles = StyleSheet.create({
 		borderColor: colors.borderColor,
 	},
 	additionalItemText: {
-		color: 'black',
+		color: colors.black,
 		fontSize: fonts.big,
 	},
 	noBorder: {

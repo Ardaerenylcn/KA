@@ -19,70 +19,61 @@ const CustomerInfoDetailHeadArea = ({
 	customerInfoDetailCustomerLogin,
 }) => {
 	return (
+		<SafeAreaView style={styles.SafeAreaView}>
+			<View style={styles.customerInfoDetailHeadAreaContainer}>
+				<View
+					style={styles.customerInfoDetailHeadAreaContainerIDandVisitButton}
+				>
+					<Text style={styles.customerInfoDetailCustomerID}>
+						{customerInfoDetailCustomerID}
+					</Text>
 
-			<SafeAreaView style={styles.SafeAreaView}>
-				<View style={styles.customerInfoDetailHeadAreaContainer}>
-					<View
-						style={styles.customerInfoDetailHeadAreaContainerIDandVisitButton}
+					<TouchableOpacity
+						style={styles.customerInfoDetailHeadAreaContainerVisitButton}
 					>
-						<Text style={styles.customerInfoDetailCustomerID}>
-							{customerInfoDetailCustomerID}
-						</Text>
-
-						<TouchableOpacity
-							style={styles.customerInfoDetailHeadAreaContainerVisitButton}
+						<FontAwesome name="location-arrow" color="white" size={16} />
+						<Text
+							style={styles.customerInfoDetailHeadAreaContainerVisitButtonText}
 						>
-							<FontAwesome name="location-arrow" color="white" size={16} />
-							<Text
-								style={
-									styles.customerInfoDetailHeadAreaContainerVisitButtonText
-								}
-							>
-								Tarif
-							</Text>
-						</TouchableOpacity>
-					</View>
+							Tarif
+						</Text>
+					</TouchableOpacity>
+				</View>
 
-					<View>
-						<Text style={styles.customerInfoDetailHeadLeftSide}>
-							{customerInfoDetailCustomerNAME}
-						</Text>
-					</View>
-					<View style={styles.customerInfoDetailHeadLeftSide}>
-						<FontAwesome name="location-arrow" color="gray" />
-						<Text style={styles.customerInfoDetailCustomerDistanceText}>
-							{' '}
-							{customerInfoDetailCustomerDİSTANCE} mt
-						</Text>
-					</View>
-					<View
-						style={[
-							styles.customerInfoDetailHeadLeftSide,
-							styles.visitEntryView,
-						]}
-					>
+				<View>
+					<Text style={styles.customerInfoDetailHeadLeftSide}>
+						{customerInfoDetailCustomerNAME}
+					</Text>
+				</View>
+				<View style={styles.customerInfoDetailHeadLeftSide}>
+					<FontAwesome name="location-arrow" color="gray" />
+					<Text style={styles.customerInfoDetailCustomerDistanceText}>
+						{' '}
+						{customerInfoDetailCustomerDİSTANCE} mt
+					</Text>
+				</View>
+				<View
+					style={[styles.customerInfoDetailHeadLeftSide, styles.visitEntryView]}
+				>
+					<TouchableOpacity>
 						<View style={styles.visitEntry}>
 							<FontAwesome name="map-pin" color="white" />
 
-							<TouchableOpacity>
-								<Text style={styles.visitEntryText}> Ziyaret Girişi</Text>
-							</TouchableOpacity>
+							<Text style={styles.visitEntryText}> Ziyaret Girişi</Text>
 						</View>
-					</View>
-					<View style={styles.customerInfoDetailHeadLeftSide}>
-						<Text>Son Ziyaret: {customerInfoDetailCustomerLogin}</Text>
-					</View>
-      
+					</TouchableOpacity>
 				</View>
-        
-			</SafeAreaView>
-
+				<View style={styles.customerInfoDetailHeadLeftSide}>
+					<Text>Son Ziyaret: {customerInfoDetailCustomerLogin}</Text>
+				</View>
+			</View>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	customerInfoDetailHeadAreaContainer: {
-    paddingVertical:distances.defaultDistance,
+		paddingVertical: distances.defaultDistance,
 		backgroundColor: colors.grey4,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
@@ -111,7 +102,7 @@ const styles = StyleSheet.create({
 		color: colors.white,
 		fontSize: fonts.normal,
 		marginLeft: 5,
-    padding:2,
+		padding: 2,
 	},
 	customerInfoDetailHeadLeftSide: {
 		marginHorizontal: distances.defaultDistance * 2,
