@@ -4,7 +4,10 @@ import colors from '../../constants/colors';
 import fonts from '../../constants/fonts';
 import distances from '../../constants/distances';
 
-const VisitEntryTopArea = ({ visitEntryStoreCode, visitEntryStoreName }) => {
+const VisitEntryTopArea = ({
+	visitEntryStoreCode,
+	visitEntryStoreName,
+}) => {
 	const [isEnabled, setIsEnabled] = useState(false);
 	const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
 		backgroundColor: colors.white,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
+		marginTop:distances.defaultDistance,
 		shadowOffset: {
 			width: 0,
 			height: 2,
