@@ -4,7 +4,7 @@ import {
 	Text,
 	StyleSheet,
 	ScrollView,
-	TouchableOpacity,
+	TouchableOpacity,	
 	Dimensions,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,12 +12,17 @@ import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
 import fonts from '../../../constants/fonts';
 
+
+
+const handleArizaBildirimiPress = () => {
+	navigation.navigate('Arıza Bildirimi'); 
+};
 const App = () => {
 	const data = [
 		{ text: 'Ziyaret Listesi', icon: 'angle-right' },
 		{ text: 'Soğutucu Envanteri', icon: 'angle-right' },
 		{ text: 'Soğutucu Ekipman Sayımı', icon: 'angle-right' },
-		{ text: 'Soğutucu İşlemleri', icon: 'angle-right' },
+		{ text: 'Soğutucu İşlemlerim', icon: 'angle-right' },
 	];
 
 	const additionalTexts = {
@@ -27,7 +32,7 @@ const App = () => {
 	const [isExpanded, setIsExpanded] = useState(false);
 
 	const handleItemPress = item => {
-		if (item.text === 'Soğutucu İşlemleri') {
+		if (item.text === 'Soğutucu İşlemlerim') {
 			setIsExpanded(!isExpanded);
 		}
 	};
@@ -76,7 +81,21 @@ const App = () => {
 					]}
 				>
 					{additionalTexts['Soğutucu İşlemleri'].map((text, index) => (
-						<TouchableOpacity key={index} style={styles.additionalItem}>
+						<TouchableOpacity
+							key={index}
+							style={styles.additionalItem}
+							onPress={() => {
+								if (text === 'Arıza Bildirimi') {
+									handleArizaBildirimiPress()
+								}
+								if (text === 'Kurulum') {
+									console.log('kurulum');
+								}
+								if (text === 'Sökme') {
+									console.log('Sökme');
+								}
+							}}
+						>
 							<Text style={styles.additionalItemText}>{text}</Text>
 						</TouchableOpacity>
 					))}

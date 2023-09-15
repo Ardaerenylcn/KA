@@ -17,7 +17,12 @@ const CustomerInfoDetailHeadArea = ({
 	customerInfoDetailCustomerNAME,
 	customerInfoDetailCustomerDİSTANCE,
 	customerInfoDetailCustomerLogin,
+	navigation,
 }) => {
+	const handleVisitEntryPress = () => {
+		navigation.navigate('Ziyaret Girişi');
+	};
+
 	return (
 		<SafeAreaView style={styles.SafeAreaView}>
 			<View style={styles.customerInfoDetailHeadAreaContainer}>
@@ -52,7 +57,7 @@ const CustomerInfoDetailHeadArea = ({
 				<View
 					style={[styles.customerInfoDetailHeadLeftSide, styles.visitEntryView]}
 				>
-					<TouchableOpacity>
+					<TouchableOpacity onPress={handleVisitEntryPress}>
 						<View style={styles.visitEntry}>
 							<FontAwesome name="map-pin" color="white" />
 
