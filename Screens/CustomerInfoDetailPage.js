@@ -4,6 +4,10 @@ import CustomerInfoDetailHeadArea from '../component/CustomerInfo/CustomerInfoDe
 import CustoemrInfoDetailBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import VisitEntry from "../Screens/VisitEntry"
+import ArızaBildirimi from './ArızaBildirimi';
+import sokme from './sokme';
+import Kurulum from './Kurulum';
+import colors from '../constants/colors';
 
 function CustomerInfoDetailPage({ navigation }) {
 	return (
@@ -38,6 +42,32 @@ function VisitEntryNavigate() {
 			options={{ headerBackTitle: 'Geri' }} 
 			component={VisitEntry}
 		  />
+		  <Stack.Screen
+
+			name="Arıza Bildirimi"
+			options={{
+			  headerBackTitle: 'Geri',
+			  headerTitle: 'Ekipmanlar',
+			  headerTintColor: 'white',
+			  headerStyle: {
+				backgroundColor: colors.efesblue,
+				
+			  },
+			}}
+			component={ArızaBildirimi}
+		  
+		  />
+		  	  <Stack.Screen
+			name="Sokme"
+			options={{ headerBackTitle: 'Geri' }} 
+			component={sokme}
+		  />
+		   <Stack.Screen
+			name="Kurulum"
+			options={{ headerBackTitle: 'Geri' }} 
+			component={Kurulum}
+		  />
+
 		</Stack.Navigator>
 	);
 }

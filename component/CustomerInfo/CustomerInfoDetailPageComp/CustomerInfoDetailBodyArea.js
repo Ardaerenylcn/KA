@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
 	View,
 	Text,
@@ -14,10 +15,19 @@ import fonts from '../../../constants/fonts';
 
 
 
-const handleArizaBildirimiPress = () => {
-	navigation.navigate('Arıza Bildirimi'); 
-};
+
+
 const App = () => {
+	const handleArizaBildirimiPress = () => {
+		navigation.navigate('Arıza Bildirimi'); 
+	};
+	const handleKurulumPress = ()=>{
+		navigation.navigate('Kurulum')
+	}
+	const handleSokmePress =()=>{
+		navigation.navigate('Sokme')
+	}
+	const navigation = useNavigation();
 	const data = [
 		{ text: 'Ziyaret Listesi', icon: 'angle-right' },
 		{ text: 'Soğutucu Envanteri', icon: 'angle-right' },
@@ -86,13 +96,19 @@ const App = () => {
 							style={styles.additionalItem}
 							onPress={() => {
 								if (text === 'Arıza Bildirimi') {
+									console.log('handleArizaBildirimiPress')
+									
 									handleArizaBildirimiPress()
 								}
 								if (text === 'Kurulum') {
-									console.log('kurulum');
+									handleKurulumPress()
+									console.log('handleKurulumPress')
+
 								}
 								if (text === 'Sökme') {
-									console.log('Sökme');
+									handleSokmePress();
+									console.log('handleSokmePress')
+
 								}
 							}}
 						>

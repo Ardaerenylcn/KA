@@ -41,8 +41,8 @@ function MyTabs() {
 				name="Profilim"
 				component={Customer}
 				options={{
-					headerTitle: 'KA MOBİL',
 					headerTintColor: 'black',
+					headerShown: false 
 				}}
 			/>
 
@@ -52,6 +52,7 @@ function MyTabs() {
 				options={{
 					headerTitle: 'KA MOBiL',
 					headerTintColor: 'black',
+					headerShown: false 
 				}}
 			/>
 		</Tab.Navigator>

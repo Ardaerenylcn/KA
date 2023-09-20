@@ -120,8 +120,10 @@ function CustomerInfoPageNavigate() {
 			/>
 			<Stack.Screen
 				name="Müşteri İşlemleri"
-				options={{ headerBackTitle: 'Geri' }}
+				options={{ headerBackTitle: 'Geri' ,headerShown: false}}
 				component={CustomerInfoDetailPage}
+
+
 			/>
 		</Stack.Navigator>
 	);
