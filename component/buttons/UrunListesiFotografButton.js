@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   button: {
     flex: 1, 
     backgroundColor: colors.green,
-    borderRadius: 3,
+    borderRadius:distances.quarterDistance / 2,
     marginHorizontal: 1,
     paddingVertical:distances.quarterDistance/2,
   },
