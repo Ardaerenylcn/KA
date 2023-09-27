@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // React Navigation'ı ekleyin
@@ -6,11 +5,7 @@ import colors from '../../../../constants/colors';
 import ArizaButton from '../../../buttons/Ariza_button';
 import distances from '../../../../constants/distances';
 import Sokme_Button from '../../../buttons/Sokme_Button';
-const SokmeBodyComponent = ({
-	BarcodeCode,
-	CoolerDesc,
-	Argeement,
-}) => {
+const SokmeBodyComponent = ({ BarcodeCode, CoolerDesc, Argeement }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
 			<Text style={styles.FaultCode}>{BarcodeCode}</Text>
