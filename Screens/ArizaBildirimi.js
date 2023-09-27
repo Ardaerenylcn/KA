@@ -2,6 +2,9 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
 import ArızaBildirimiBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaBildirimiBodyComponent';
 import ArızaBildirimiHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaBildirimiHeadComponent';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
 
 
 const ArızaBildirimi = () => {
