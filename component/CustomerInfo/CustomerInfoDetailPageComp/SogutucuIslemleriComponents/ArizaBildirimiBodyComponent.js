@@ -1,14 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // React Navigation'ı ekleyin
+import { useNavigation } from '@react-navigation/native';
 import colors from '../../../../constants/colors';
 import ArizaButton from '../../../buttons/Arıza_button';
 import distances from '../../../../constants/distances';
+
 const ArızaBildirimiBodyComponent = ({
 	FaultCode,
 	FaultProduct,
 	Argeement,
 }) => {
+
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
 			<Text style={styles.FaultCode}>{FaultCode}</Text>

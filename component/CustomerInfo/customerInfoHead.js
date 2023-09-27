@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 import colors from '../../constants/colors';
 import distances from '../../constants/distances';
@@ -17,10 +17,9 @@ const CustomerInfoHead = ({
 		<View style={styles.CustomerInfoDetailPageNavigateButtonBackground}>
 			<View style={styles.customerInfoDetailPageHeadTextStyle}>
 				<View style={styles.customerInfoDetailPageHeadIcon}>
-					<Entypo
-						name="shop"
-						size={24}
-						style={styles.customerInfoDetailPageHeadIconStyle}
+					<Image
+						style={styles.icShopTinyLogo}
+						source={require('../../assets/icons/ic_shop.png')}
 					/>
 				</View>
 				<View>
@@ -125,6 +124,10 @@ const styles = StyleSheet.create({
 	},
 	customerInfoStoreIsFalseAndTrueArea: {
 		width: distances.defaultDistance * 4,
+	},
+	icShopTinyLogo: {
+		width: 26,
+		height: 26,
 	},
 });
 

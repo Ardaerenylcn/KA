@@ -6,7 +6,10 @@ import distances from '../../constants/distances';
 const ArizaButton = () => {
 	return (
 		<View>
-			<TouchableOpacity style={styles.arizaButtonContainer}>
+			<TouchableOpacity
+				onPressOut={handleAriza}
+				style={styles.arizaButtonContainer}
+			>
 				<Image
 					source={require('../../assets/icons/ic_Attention.png')}
 					style={styles.icon}

@@ -1,33 +1,24 @@
-import React, { useState } from 'react'; // useState eklenmeli
-import { View, Text, TextInput, StyleSheet } from 'react-native';
-import colors from '../constants/colors';
-import distances from '../constants/distances';
+import { View, Text, ScrollView } from 'react-native';
+import React from 'react';
+import KurulumHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumHeadComponent';
+import KurulumBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumBodyComponent';
 
-const Kurulum = () => {
-	const [number, onChangeNumber] = useState('arda');
-
+export default function Kurulum() {
 	return (
-		<View>
-			<TextInput
-				style={styles.KurulumInputBox}
-				onChangeText={onChangeNumber}
-				value={number}
-				placeholder="useless placeholder"
-				keyboardType="numeric"
-			/>
-		</View>
+		<ScrollView>
+			<>
+				<KurulumHeadComponent />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY TEK KAPILI'} />
+				<KurulumBodyComponent Code={'4050'} Desciription={'GUSTA MİNİ'} />
+				<KurulumBodyComponent Code={'4054'} Desciription={'BARDAK'} />
+				<KurulumBodyComponent Code={'4055'} Desciription={'DERİN DONDURUCU'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DİKEY İKİ KAPILI'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DİKEY TEK KAPILI'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
+			</>
+		</ScrollView>
 	);
-};
-
-const styles = StyleSheet.create({
-	KurulumInputBox: {
-		borderWidth: 1,
-		borderColor: colors.borderColor,
-		padding: distances.quarterDistance,
-		borderRadius: 5,
-		marginHorizontal: distances.defaultDistance,
-		marginTop: distances.defaultDistance,
-	},
-});
-
-export default Kurulum;
+}

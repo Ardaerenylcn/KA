@@ -1,23 +1,25 @@
+
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // React Navigation'ı ekleyin
 import colors from '../../../../constants/colors';
-import ArizaButton from '../../../buttons/Ariza_button';
+import ArizaButton from '../../../buttons/Arıza_button';
 import distances from '../../../../constants/distances';
-const ArızaBildirimiBodyComponent = ({
-	FaultCode,
-	FaultProduct,
+import Sokme_Button from '../../../buttons/Sokme_Button';
+const SokmeBodyComponent = ({
+	BarcodeCode,
+	CoolerDesc,
 	Argeement,
 }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
-			<Text style={styles.FaultCode}>{FaultCode}</Text>
+			<Text style={styles.FaultCode}>{BarcodeCode}</Text>
 			<View style={styles.ArızaBildirimiComponentBodyButtonAndProduct}>
 				<View style={styles.FaultProduct}>
-					<Text>{FaultProduct} </Text>
+					<Text>{CoolerDesc} </Text>
 				</View>
 				<TouchableOpacity style={styles.Button}>
-					<ArizaButton />
+					<Sokme_Button />
 				</TouchableOpacity>
 			</View>
 			<Text style={styles.ArgeementText}>Sözleşme NO.: {Argeement}</Text>
@@ -53,4 +55,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ArızaBildirimiBodyComponent;
+export default SokmeBodyComponent;
