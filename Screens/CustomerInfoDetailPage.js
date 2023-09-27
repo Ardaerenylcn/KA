@@ -80,6 +80,7 @@ function VisitEntryNavigate() {
 				component={SogutucuEnvanteri}
 			/>
 		</Stack.Navigator>
+		
 	);
 }
 export default VisitEntryNavigate;
