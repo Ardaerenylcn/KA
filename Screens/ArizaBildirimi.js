@@ -53,6 +53,9 @@ const ArızaBildirimi = () => {
 				/>
 			</ScrollView>
 		</>
+
+
+
 	);
 };
 

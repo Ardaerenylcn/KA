@@ -10,6 +10,7 @@ import sokme from './sokme';
 import Kurulum from './Kurulum';
 import colors from '../constants/colors';
 import SogutucuEnvanteri from './SogutucuEnvanteri';
+import Ariza from './Ariza';
 
 function CustomerInfoDetailPage({ navigation }) {
 	return (
@@ -79,8 +80,12 @@ function VisitEntryNavigate() {
 				options={{ headerBackTitle: 'Geri' }}
 				component={SogutucuEnvanteri}
 			/>
+			<Stack.Screen
+				name="Arıza"
+				options={{ headerBackTitle: 'Geri' }}
+				component={Ariza}
+			/>
 		</Stack.Navigator>
-		
 	);
 }
 export default VisitEntryNavigate;

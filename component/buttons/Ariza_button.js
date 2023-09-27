@@ -1,12 +1,22 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // React Navigation'ı içe aktarın
 import colors from '../../constants/colors';
 import distances from '../../constants/distances';
 
 const ArizaButton = () => {
+	const navigation = useNavigation();
+
+	const handleArizaClick = () => {
+		navigation.navigate('Arıza');
+	};
+
 	return (
 		<View>
-			<TouchableOpacity style={styles.arizaButtonContainer}>
+			<TouchableOpacity
+				style={styles.arizaButtonContainer}
+				onPress={handleArizaClick}
+			>
 				<Image
 					source={require('../../assets/icons/ic_Attention.png')}
 					style={styles.icon}
