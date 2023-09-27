@@ -43,14 +43,12 @@ const styles = StyleSheet.create({
 		paddingHorizontal: distances.defaultDistance,
 	},
 	ZiyaretListesiStoreCode: {
-		fontSize: fonts.big,
 		marginTop: distances.halfDistance / 4,
 	},
 	VisiterDesc: {
 		color: colors.grey,
 	},
 	ZiyaretListesiVisiterAndTime: {
-		fontSize: fonts.big,
 		marginTop: distances.halfDistance / 4,
 		marginBottom: distances.halfDistance / 4,
 	},
