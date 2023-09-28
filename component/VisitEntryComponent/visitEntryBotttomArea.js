@@ -1,39 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
 	Text,
 	View,
 	StyleSheet,
-	Switch,
-	TextInput,
-	ScrollView,
 	TouchableOpacity,
 } from 'react-native';
 import colors from '../../constants/colors';
-import fonts from '../../constants/fonts';
+
 import distances from '../../constants/distances';
 import { FontAwesome } from '@expo/vector-icons';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
-const openImagePicker = () => {
-	const options = {
-		mediaType: 'photo',
-		includeBase64: false,
-		maxHeight: 2000,
-		maxWidth: 2000,
-	};
-
-	launchImageLibrary(options, response => {
-		if (response.didCancel) {
-			console.log('User cancelled image picker');
-		} else if (response.error) {
-			console.log('Image picker error: ', response.error);
-		} else {
-			let imageUri = response.uri || response.assets?.[0]?.uri;
-			setSelectedImage(imageUri);
-		}
-	});
-};
 
 const VisitEntryBottomArea = () => {
 	return (
@@ -44,7 +20,7 @@ const VisitEntryBottomArea = () => {
 				</Text>
 			</View>
 			<View style={{ height: '100%' }}>
-				<TouchableOpacity onPress={openImagePicker}>
+				<TouchableOpacity>
 					<View style={styles.visitEntryBottomContainerIconArea}>
 						<FontAwesome name="camera" size={32} color={colors.grey} />
 					</View>
