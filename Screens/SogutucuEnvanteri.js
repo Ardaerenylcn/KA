@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import React from 'react';
 import SogutucuEnvanteriComponentHeadArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuEnvanteriComponentHeadArea';
 import SogutucuEnvanteriComponentBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuEnvanteriComponentBodyArea';
