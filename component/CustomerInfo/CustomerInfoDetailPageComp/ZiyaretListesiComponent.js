@@ -2,7 +2,7 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
 import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
-import fonts from '../../../constants/fonts';
+
 
 const ZiyaretListesiComponent = ({
 	StoreCode,
