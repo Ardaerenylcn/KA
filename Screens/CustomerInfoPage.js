@@ -1,25 +1,11 @@
-// CustomerInfoPage.js
-
 import React from 'react';
-import {
-	StyleSheet,
-	View,
-	SafeAreaView,
-	ScrollView,
-	Button,
-	TouchableOpacity,
-	Text,
-} from 'react-native';
+import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import CustomerInfoRow from '../component/CustomerInfo/CustomerInfoRow';
 import CustomerInfoTiltle from '../component/CustomerInfo/CustomerInfoTiltle';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import CustomerInfoDetailPage from './CustomerInfoDetailPage';
-import { FontAwesome } from '@expo/vector-icons';
 import colors from '../constants/colors';
-import fonts from '../constants/fonts';
-import distances from '../constants/distances';
 import CustomerInfoHead from '../component/CustomerInfo/customerInfoHead';
 
 function CustomerInfoPage({ navigation }) {
@@ -120,10 +106,8 @@ function CustomerInfoPageNavigate() {
 			/>
 			<Stack.Screen
 				name="Müşteri İşlemleri"
-				options={{ headerBackTitle: 'Geri' ,headerShown: false}}
+				options={{ headerBackTitle: 'Geri', headerShown: false }}
 				component={CustomerInfoDetailPage}
-
-
 			/>
 		</Stack.Navigator>
 	);
