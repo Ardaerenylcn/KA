@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import VisitEntryTopArea from '../component/VisitEntryComponent/VisitEntryTopArea';
 import VisitEntryMiddleArea from '../component/VisitEntryComponent/VisitEntryMiddleArea';
-import VisitEntryBottomArea from '../component/VisitEntryComponent/VisitEntryBotttomArea';
+import VisitEntryBottomArea from '../component/VisitEntryComponent/VisitEntryBottomArea';
 
 const VisitEntry = () => {
 	return (
