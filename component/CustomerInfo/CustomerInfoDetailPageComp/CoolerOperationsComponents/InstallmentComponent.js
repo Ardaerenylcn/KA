@@ -10,7 +10,7 @@ import {
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
 
-const KurulumHeadComponent = () => {
+const InstallmentComponent = () => {
 	const [number, onChangeNumber] = useState('');
 	const inputRef = useRef(null);
 	const [showCancel, setShowCancel] = useState(false);
@@ -100,4 +100,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default KurulumHeadComponent;
+export default InstallmentComponent;

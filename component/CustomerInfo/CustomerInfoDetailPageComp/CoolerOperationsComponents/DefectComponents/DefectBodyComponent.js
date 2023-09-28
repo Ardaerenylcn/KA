@@ -10,7 +10,7 @@ import distances from '../../../../../constants/distances';
 import colors from '../../../../../constants/colors';
 import fonts from '../../../../../constants/fonts';
 
-const ArizaBodyComponent = ({ serialNumber, collerName }) => {
+const DefectBodyComponent = ({ serialNumber, collerName }) => {
 	const [text, onChangeText] = useState('');
 
 	return (
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ArizaBodyComponent;
+export default DefectBodyComponent;

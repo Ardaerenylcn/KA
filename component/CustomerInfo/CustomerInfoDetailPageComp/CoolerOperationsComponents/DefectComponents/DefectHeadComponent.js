@@ -3,7 +3,7 @@ import React from 'react';
 import distances from '../../../../../constants/distances';
 import colors from '../../../../../constants/colors';
 
-const ArizaHeadComponent = ({
+const DefectHeadComponent = ({
 	storeCode,
 	storeFullName,
 	address,
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ArizaHeadComponent;
+export default DefectHeadComponent;

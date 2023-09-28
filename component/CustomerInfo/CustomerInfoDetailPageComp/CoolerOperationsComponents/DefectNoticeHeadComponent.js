@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
-const ArızaBildirimiComponent = ({ storeCode, storeFullName }) => {
+const DefectNoticeHeadComponent = ({ storeCode, storeFullName }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentMainContainer}>
 			<View style={styles.ArızaBildirimiComponentHeadContainer}>
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ArızaBildirimiComponent;
+export default DefectNoticeHeadComponent;

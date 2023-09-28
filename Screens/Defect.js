@@ -1,9 +1,9 @@
 import { ScrollView } from 'react-native';
 import React from 'react';
-import ArizaHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaComponents/ArizaHeadComponent';
-import ArizaBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaComponents/ArizaBodyComponent';
+import ArizaHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/CoolerOperationsComponents/DefectComponents/DefectHeadComponent';
+import ArizaBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/CoolerOperationsComponents/DefectComponents/DefectBodyComponent';
 
-const Ariza = () => {
+const Defect = () => {
 	return (
 		<ScrollView>
 			<ArizaHeadComponent
@@ -24,4 +24,4 @@ const Ariza = () => {
 	);
 };
 
-export default Ariza;
+export default Defect;

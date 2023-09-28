@@ -1,16 +1,16 @@
-import {ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import React from 'react';
 import CustomerInfoDetailHeadArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailHeadArea';
 import CustoemrInfoDetailBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import VisitEntry from '../Screens/VisitEntry';
-import ArızaBildirimi from './ArizaBildirimi';
-import ZiyaretListesi from './ZiyaretListesi';
-import sokme from './sokme';
-import Kurulum from './Kurulum';
+import ArızaBildirimi from './DefectNotice';
+import VisitList from './VisitList';
+import sokme from './Dismantle';
+import Installment from './Installment'
 import colors from '../constants/colors';
-import SogutucuEnvanteri from './SogutucuEnvanteri';
-import Ariza from './Ariza';
+import CoolerInventory from './CoolerInventory';
+import Defect from './Defect';
 
 function CustomerInfoDetailPage({ navigation }) {
 	return (
@@ -68,22 +68,22 @@ function VisitEntryNavigate() {
 			<Stack.Screen
 				name="Kurulum"
 				options={{ headerBackTitle: 'Geri' }}
-				component={Kurulum}
+				component={Installment}
 			/>
 			<Stack.Screen
 				name="Ziyaret Listesi"
 				options={{ headerBackTitle: 'Geri' }}
-				component={ZiyaretListesi}
+				component={VisitList}
 			/>
 			<Stack.Screen
 				name="Sogutucu Envanteri"
 				options={{ headerBackTitle: 'Geri' }}
-				component={SogutucuEnvanteri}
+				component={CoolerInventory}
 			/>
 			<Stack.Screen
 				name="Arıza"
 				options={{ headerBackTitle: 'Geri' }}
-				component={Ariza}
+				component={Defect}
 			/>
 		</Stack.Navigator>
 	);

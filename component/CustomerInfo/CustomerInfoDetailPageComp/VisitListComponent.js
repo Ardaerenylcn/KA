@@ -3,7 +3,7 @@ import React from 'react';
 import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
 
-const ZiyaretListesiComponent = ({
+const VisitListComponent = ({
 	storeCode,
 	storeFullName,
 	visiter,
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 	},
 });
-export default ZiyaretListesiComponent;
+export default VisitListComponent;

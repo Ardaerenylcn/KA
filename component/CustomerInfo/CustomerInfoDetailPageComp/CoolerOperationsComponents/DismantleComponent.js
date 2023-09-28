@@ -4,7 +4,7 @@ import distances from '../../../../constants/distances';
 import colors from '../../../../constants/colors';
 
 
-const SokmeHeadComponent = ({ storeCode, storeFullName,}) => {
+const DismantleDetailComponent = ({ storeCode, storeFullName,}) => {
 
     return (
       <View style={styles.ArızaBildirimiComponentMainContainer}>
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SokmeHeadComponent;
+export default DismantleDetailComponent;

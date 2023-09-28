@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
-import Sokme_Button from '../../../buttons/Sokme_Button';
-const SokmeBodyComponent = ({ barcodeCode, colerDesc, agreement }) => {
+import Sokme_Button from '../../../buttons/DismantleButton';
+const DismantleComponent = ({ barcodeCode, colerDesc, agreement }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
 			<Text style={styles.FaultCode}>{barcodeCode}</Text>
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default SokmeBodyComponent;
+export default DismantleComponent;

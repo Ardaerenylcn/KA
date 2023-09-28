@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../../../constants/colors';
-import ArizaButton from '../../../buttons/Ariza_button';
+import ArizaButton from '../../../buttons/DefectButton';
 import distances from '../../../../constants/distances';
 
-const ArızaBildirimiBodyComponent = ({
+const DefectNoticeBodyComponent = ({
 	faultCode,
 	faultProduct,
 	argeement,
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ArızaBildirimiBodyComponent;
+export default DefectNoticeBodyComponent;

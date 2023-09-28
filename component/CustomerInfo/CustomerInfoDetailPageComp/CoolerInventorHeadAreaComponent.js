@@ -3,7 +3,7 @@ import React from 'react';
 import distances from '../../../constants/distances';
 import colors from '../../../constants/colors';
 
-const SogutucuEnvanteriComponentHeadArea = ({ storeCode, storeFullName }) => {
+const CoolerInventoryComponentHeadArea = ({ storeCode, storeFullName }) => {
 	return (
 		<View style={styles.SogutucuEnvanteriComponentHeadArea}>
 			<Text>{storeCode}</Text>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
 		
 	},
 });
-export default SogutucuEnvanteriComponentHeadArea;
+export default CoolerInventoryComponentHeadArea;

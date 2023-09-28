@@ -3,7 +3,7 @@ import React from 'react';
 import distances from '../../../constants/distances';
 import colors from '../../../constants/colors';
 
-const SogutucuEnvanteriComponentBodyArea = ({ coolerCode, coolerDesc }) => {
+const CoolerInventoryComponentBodyArea = ({ coolerCode, coolerDesc }) => {
 	return (
 		<View style={styles.SogutucuEnvanteriComponentBodyArea}>
 			<Text>{coolerCode}</Text>
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
 		color: colors.grey,
 	},
 });
-export default SogutucuEnvanteriComponentBodyArea;
+export default CoolerInventoryComponentBodyArea;

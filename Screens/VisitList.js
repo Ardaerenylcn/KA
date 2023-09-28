@@ -1,11 +1,11 @@
 import { ScrollView } from 'react-native';
 import React from 'react';
-import ZiyaretListesiComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/ZiyaretListesiComponent';
+import VisitListComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/VisitListComponent';
 
-const ZiyaretListesi = () => {
+const VisitList = () => {
 	return (
 		<ScrollView>
-			<ZiyaretListesiComponent
+			<VisitListComponent
 				storeCode={'280025'}
 				storeFullName={'GALLERİA MMM MİGROS'}
 				visiter={'CEM İNTEPE'}
@@ -16,4 +16,4 @@ const ZiyaretListesi = () => {
 	);
 };
 
-export default ZiyaretListesi;
+export default VisitList;
