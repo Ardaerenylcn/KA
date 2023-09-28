@@ -1,11 +1,7 @@
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native';
 import React from 'react';
 import ArızaBildirimiBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaBildirimiBodyComponent';
 import ArızaBildirimiHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/ArizaBildirimiHeadComponent';
-
-
-
-
 
 const ArızaBildirimi = () => {
 	return (
@@ -53,9 +49,6 @@ const ArızaBildirimi = () => {
 				/>
 			</ScrollView>
 		</>
-
-
-
 	);
 };
 
