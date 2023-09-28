@@ -1,4 +1,4 @@
-import { View, Text, Animated, ScrollView } from 'react-native';
+import {ScrollView } from 'react-native';
 import React from 'react';
 import CustomerInfoDetailHeadArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailHeadArea';
 import CustoemrInfoDetailBodyArea from '../component/CustomerInfo/CustomerInfoDetailPageComp/CustomerInfoDetailBodyArea';
