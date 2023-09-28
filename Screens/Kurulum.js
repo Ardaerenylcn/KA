@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import {ScrollView } from 'react-native';
 import React from 'react';
 import KurulumHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumHeadComponent';
 import KurulumBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumBodyComponent';
