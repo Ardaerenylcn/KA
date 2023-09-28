@@ -3,12 +3,12 @@ import React from 'react';
 import distances from '../../../constants/distances';
 import colors from '../../../constants/colors';
 
-const SogutucuEnvanteriComponentBodyArea = ({ CoolerCode, CoolerDesc }) => {
+const SogutucuEnvanteriComponentBodyArea = ({ coolerCode, coolerDesc }) => {
 	return (
 		<View style={styles.SogutucuEnvanteriComponentBodyArea}>
-			<Text>{CoolerCode}</Text>
+			<Text>{coolerCode}</Text>
 			<Text style={styles.SogutucuEnvanteriComponentBodyAreaCoolerDesc}>
-				{CoolerDesc}
+				{coolerDesc}
 			</Text>
 		</View>
 	);

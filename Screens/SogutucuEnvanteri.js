@@ -7,16 +7,16 @@ const SogutucuEnvanteri = () => {
 	return (
 		<ScrollView>
 			<SogutucuEnvanteriComponentHeadArea
-				StoreCode={'280025'}
-				StoreFullName={'GALLERİA MMM MİGROS'}
+				storeCode={'280025'}
+				storeFullName={'GALLERİA MMM MİGROS'}
 			/>
 			<SogutucuEnvanteriComponentBodyArea
-				CoolerCode={'100176521'}
-				CoolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
+				coolerCode={'100176521'}
+				coolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
 			/>
 			<SogutucuEnvanteriComponentBodyArea
-				CoolerCode={'100176521'}
-				CoolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
+				coolerCode={'100176521'}
+				coolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
 			/>
 		</ScrollView>
 	);

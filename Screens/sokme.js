@@ -8,16 +8,16 @@ const Sokme = () => {
 		<>
 			<ScrollView>
 				<SokmeHeadComponent
-					StoreCode={'280025'}
-					StoreFullName={'GALLERİA MMM MİGROS'}
+					storeCode={'280025'}
+					storeFullName={'GALLERİA MMM MİGROS'}
 				/>
 				<SokmeBodyComponent
-					BarcodeCode={'100176521'}
-					CoolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
+					barcodeCode={'100176521'}
+					coolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
 				/>
 				<SokmeBodyComponent
-					BarcodeCode={'100177089'}
-					CoolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
+					barcodeCode={'100177089'}
+					coolerDesc={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA '}
 				/>
 			</ScrollView>
 		</>

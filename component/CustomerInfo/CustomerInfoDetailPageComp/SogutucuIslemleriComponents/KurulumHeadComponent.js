@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
 		width: 24,
 		height: 24,
 		marginRight: 8,
-
 	},
 	KurulumInputBox: {
 		flex: 1,

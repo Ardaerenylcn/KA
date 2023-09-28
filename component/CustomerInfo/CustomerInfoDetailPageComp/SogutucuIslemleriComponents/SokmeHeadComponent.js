@@ -4,14 +4,14 @@ import distances from '../../../../constants/distances';
 import colors from '../../../../constants/colors';
 
 
-const SokmeHeadComponent = ({ StoreCode, StoreFullName,}) => {
+const SokmeHeadComponent = ({ storeCode, storeFullName,}) => {
 
     return (
       <View style={styles.ArızaBildirimiComponentMainContainer}>
         <View style={styles.ArızaBildirimiComponentHeadContainer}>
           <View style={styles.ArızaBildirimiComponentHeadContainerTextArea}>
-            <Text>{StoreCode}</Text>
-            <Text style={styles.ArızaBildirimiStoreName}>{StoreFullName}</Text>
+            <Text>{storeCode}</Text>
+            <Text style={styles.ArızaBildirimiStoreName}>{storeFullName}</Text>
           </View>
         </View>
       </View>

@@ -6,14 +6,14 @@ import UrunListesiFotografButton from '../../../buttons/UrunListesiFotografButto
 import distances from '../../../../constants/distances';
 import fonts from '../../../../constants/fonts';
 
-const KurulumBodyComponent = ({ Code, Desciription }) => {
+const KurulumBodyComponent = ({ code, desciription }) => {
 	return (
 		<View style={styles.KurulumBodyContainer}>
 			<View style={styles.KurulumBodyViews}>
 				<View style={styles.KurulumBodyViewsText}>
-					<Text style={styles.KurulumBodyViewsTextCodeAndDesc}>{Code}</Text>
+					<Text style={styles.KurulumBodyViewsTextCodeAndDesc}>{code}</Text>
 					<Text style={styles.KurulumBodyViewsTextCodeAndDesc}>
-						{Desciription}
+						{desciription}
 					</Text>
 				</View>
 

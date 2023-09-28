@@ -1,4 +1,4 @@
-import {ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import React from 'react';
 import KurulumHeadComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumHeadComponent';
 import KurulumBodyComponent from '../component/CustomerInfo/CustomerInfoDetailPageComp/SogutucuIslemleriComponents/KurulumBodyComponent';
@@ -8,16 +8,19 @@ export default function Kurulum() {
 		<ScrollView>
 			<>
 				<KurulumHeadComponent />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY TEK KAPILI'} />
-				<KurulumBodyComponent Code={'4050'} Desciription={'GUSTA MİNİ'} />
-				<KurulumBodyComponent Code={'4054'} Desciription={'BARDAK'} />
-				<KurulumBodyComponent Code={'4055'} Desciription={'DERİN DONDURUCU'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DİKEY İKİ KAPILI'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DİKEY TEK KAPILI'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
-				<KurulumBodyComponent Code={'4049'} Desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent
+					code={'d049'}
+					desciription={'DARK DİKEY TEK KAPILI'}
+				/>
+				<KurulumBodyComponent code={'4050'} desciription={'GUSTA MİNİ'} />
+				<KurulumBodyComponent code={'4054'} desciription={'BARDAK'} />
+				<KurulumBodyComponent code={'4055'} desciription={'DERİN DONDURUCU'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DİKEY İKİ KAPILI'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DİKEY TEK KAPILI'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DARK DİKEY MİNİ'} />
+				<KurulumBodyComponent code={'4049'} desciription={'DARK DİKEY MİNİ'} />
 			</>
 		</ScrollView>
 	);

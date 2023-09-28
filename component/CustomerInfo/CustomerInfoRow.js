@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 		paddingVertical: distances.halfDistance,
 		borderBottomWidth: 0.5,
 		borderBottomColor: colors.borderColor,
-    marginTop:distances.quarterDistance 
+		marginTop: distances.quarterDistance,
 	},
 	CustomerInfoRowtitle: {
 		fontSize: fonts.normal,

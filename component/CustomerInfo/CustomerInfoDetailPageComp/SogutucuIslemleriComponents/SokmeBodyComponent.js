@@ -3,19 +3,19 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
 import Sokme_Button from '../../../buttons/Sokme_Button';
-const SokmeBodyComponent = ({ BarcodeCode, CoolerDesc, Argeement }) => {
+const SokmeBodyComponent = ({ barcodeCode, colerDesc, agreement }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
-			<Text style={styles.FaultCode}>{BarcodeCode}</Text>
+			<Text style={styles.FaultCode}>{barcodeCode}</Text>
 			<View style={styles.ArızaBildirimiComponentBodyButtonAndProduct}>
 				<View style={styles.FaultProduct}>
-					<Text>{CoolerDesc} </Text>
+					<Text>{colerDesc} </Text>
 				</View>
 				<TouchableOpacity style={styles.Button}>
 					<Sokme_Button />
 				</TouchableOpacity>
 			</View>
-			<Text style={styles.ArgeementText}>Sözleşme NO.: {Argeement}</Text>
+			<Text style={styles.ArgeementText}>Sözleşme NO.: {agreement}</Text>
 		</View>
 	);
 };

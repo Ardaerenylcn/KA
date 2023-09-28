@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-	Text,
-	View,
-	StyleSheet,
-	TouchableOpacity,
-} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../constants/colors';
 
 import distances from '../../constants/distances';
 import { FontAwesome } from '@expo/vector-icons';
-
 
 const VisitEntryBottomArea = () => {
 	return (

@@ -8,44 +8,39 @@ const ArızaBildirimi = () => {
 		<>
 			<ScrollView>
 				<ArızaBildirimiHeadComponent
-					StoreCode="280025"
-					StoreFullName="GALLERİA MMM Migros"
-					FaultCode="100177089"
+					storeCode="280025"
+					storeFullName="GALLERİA MMM Migros"
+					faultCode="100177089"
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
-				/>
-				<ArızaBildirimiBodyComponent
-					FaultCode={'100176521'}
-					FaultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
-					Argeement={'76901a8QRX'}
+					faultCode={'100176521'}
+					faultProduct={'4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA  '}
+					argeement={'76901a8QRX'}
 				/>
 			</ScrollView>
 		</>

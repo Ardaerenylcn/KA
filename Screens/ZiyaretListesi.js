@@ -6,11 +6,11 @@ const ZiyaretListesi = () => {
 	return (
 		<ScrollView>
 			<ZiyaretListesiComponent
-				StoreCode={'280025'}
-				StoreFullName={'GALLERİA MMM MİGROS'}
-				Visiter={'CEM İNTEPE'}
-				VisiterDesc={'SATIŞ TEKNOLOJİLERİ UZMANI'}
-				VisiterVisitTime={'25.05.2023'}
+				storeCode={'280025'}
+				storeFullName={'GALLERİA MMM MİGROS'}
+				visiter={'CEM İNTEPE'}
+				visiterDesc={'SATIŞ TEKNOLOJİLERİ UZMANI'}
+				visiterVisitTime={'25.05.2023'}
 			/>
 		</ScrollView>
 	);

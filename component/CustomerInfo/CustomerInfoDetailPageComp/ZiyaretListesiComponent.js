@@ -3,29 +3,28 @@ import React from 'react';
 import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
 
-
 const ZiyaretListesiComponent = ({
-	StoreCode,
-	StoreFullName,
-	Visiter,
-	VisiterDesc,
-	VisiterVisitTime,
+	storeCode,
+	storeFullName,
+	visiter,
+	visiterDesc,
+	visiterVisitTime,
 }) => {
 	return (
 		<ScrollView>
 			<View style={styles.ZiyaretListesiMagzaCodeAndFullName}>
 				<View style={styles.ZiyaretListesiMagzaCodeAndFullNameArea}>
-					<Text style={styles.ZiyaretListesiStoreCode}>{StoreCode}</Text>
-					<Text style={styles.ZiyaretListesiStoreCode}>{StoreFullName}</Text>
+					<Text style={styles.ZiyaretListesiStoreCode}>{storeCode}</Text>
+					<Text style={styles.ZiyaretListesiStoreCode}>{storeFullName}</Text>
 				</View>
 			</View>
 			<View style={styles.ZiyaretListesiMagzaCodeAndFullName}>
 				<View style={styles.ZiyaretListesiMagzaCodeAndFullNameArea}>
 					<View style={styles.ZiyaretListesiVisiterAndTimeArea}>
-						<Text style={styles.ZiyaretListesiVisiterAndTime}>{Visiter}</Text>
-						<Text>{VisiterVisitTime}</Text>
+						<Text style={styles.ZiyaretListesiVisiterAndTime}>{visiter}</Text>
+						<Text>{visiterVisitTime}</Text>
 					</View>
-					<Text style={styles.VisiterDesc}>{VisiterDesc}</Text>
+					<Text style={styles.VisiterDesc}>{visiterDesc}</Text>
 				</View>
 			</View>
 		</ScrollView>

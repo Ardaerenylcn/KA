@@ -41,7 +41,7 @@ function MyTabs() {
 				component={Customer}
 				options={{
 					headerTintColor: 'black',
-					headerShown: false 
+					headerShown: false,
 				}}
 			/>
 
@@ -51,7 +51,7 @@ function MyTabs() {
 				options={{
 					headerTitle: 'KA MOBiL',
 					headerTintColor: 'black',
-					headerShown: false 
+					headerShown: false,
 				}}
 			/>
 		</Tab.Navigator>

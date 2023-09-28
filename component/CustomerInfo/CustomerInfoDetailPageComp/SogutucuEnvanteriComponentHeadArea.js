@@ -3,12 +3,12 @@ import React from 'react';
 import distances from '../../../constants/distances';
 import colors from '../../../constants/colors';
 
-const SogutucuEnvanteriComponentHeadArea = ({ StoreCode, StoreFullName }) => {
+const SogutucuEnvanteriComponentHeadArea = ({ storeCode, storeFullName }) => {
 	return (
 		<View style={styles.SogutucuEnvanteriComponentHeadArea}>
-			<Text>{StoreCode}</Text>
+			<Text>{storeCode}</Text>
 			<Text style={styles.SogutucuEnvanteriComponentHeadAreaStoreName}>
-				{StoreFullName}
+				{storeFullName}
 			</Text>
 		</View>
 	);

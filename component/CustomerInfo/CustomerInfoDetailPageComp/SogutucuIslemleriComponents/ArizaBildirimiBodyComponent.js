@@ -5,23 +5,22 @@ import ArizaButton from '../../../buttons/Ariza_button';
 import distances from '../../../../constants/distances';
 
 const ArızaBildirimiBodyComponent = ({
-	FaultCode,
-	FaultProduct,
-	Argeement,
+	faultCode,
+	faultProduct,
+	argeement,
 }) => {
-
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
-			<Text style={styles.FaultCode}>{FaultCode}</Text>
+			<Text style={styles.FaultCode}>{faultCode}</Text>
 			<View style={styles.ArızaBildirimiComponentBodyButtonAndProduct}>
 				<View style={styles.FaultProduct}>
-					<Text>{FaultProduct} </Text>
+					<Text>{faultProduct} </Text>
 				</View>
 				<TouchableOpacity style={styles.Button}>
 					<ArizaButton />
 				</TouchableOpacity>
 			</View>
-			<Text style={styles.ArgeementText}>Sözleşme NO.: {Argeement}</Text>
+			<Text style={styles.ArgeementText}>Sözleşme NO.: {argeement}</Text>
 		</View>
 	);
 };

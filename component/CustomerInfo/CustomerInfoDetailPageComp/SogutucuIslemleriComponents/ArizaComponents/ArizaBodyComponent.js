@@ -10,7 +10,7 @@ import distances from '../../../../../constants/distances';
 import colors from '../../../../../constants/colors';
 import fonts from '../../../../../constants/fonts';
 
-const ArizaBodyComponent = ({ SerialNumber, CollerName }) => {
+const ArizaBodyComponent = ({ serialNumber, collerName }) => {
 	const [text, onChangeText] = useState('');
 
 	return (
@@ -29,7 +29,7 @@ const ArizaBodyComponent = ({ SerialNumber, CollerName }) => {
 				style={styles.input}
 				onChangeText={onChangeText}
 				value={text}
-				placeholder={`${SerialNumber} barkod numaralı ${CollerName}  arıza açıklaması giriniz`}
+				placeholder={`${serialNumber} barkod numaralı ${collerName}  arıza açıklaması giriniz`}
 				placeholderTextColor={colors.placeholderTextColor}
 				multiline={true}
 				numberOfLines={4}

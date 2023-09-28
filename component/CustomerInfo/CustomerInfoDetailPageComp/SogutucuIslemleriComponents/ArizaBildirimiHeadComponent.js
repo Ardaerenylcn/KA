@@ -2,13 +2,13 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
-const ArızaBildirimiComponent = ({ StoreCode, StoreFullName,}) => {
+const ArızaBildirimiComponent = ({ storeCode, storeFullName }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentMainContainer}>
 			<View style={styles.ArızaBildirimiComponentHeadContainer}>
 				<View style={styles.ArızaBildirimiComponentHeadContainerTextArea}>
-					<Text>{StoreCode}</Text>
-					<Text style={styles.ArızaBildirimiStoreName}>{StoreFullName}</Text>
+					<Text>{storeCode}</Text>
+					<Text style={styles.ArızaBildirimiStoreName}>{storeFullName}</Text>
 				</View>
 			</View>
 		</View>
