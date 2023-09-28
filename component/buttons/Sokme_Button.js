@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import colors from '../../constants/colors';
-import distance from '../../constants/distances';
 import distances from '../../constants/distances';
 
 export default class Sokme_Button extends Component {
