@@ -5,7 +5,6 @@ import {
 	SafeAreaView,
 	Text,
 	TouchableOpacity,
-	ScrollView,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import colors from '../../../constants/colors';
