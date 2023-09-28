@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import {
-	Text,
-	View,
-	StyleSheet,
-	Switch,
-	TextInput,
-	ScrollView,
-} from 'react-native';
+import { Text, View, StyleSheet, TextInput, ScrollView } from 'react-native';
 import colors from '../../constants/colors';
-import fonts from '../../constants/fonts';
 import distances from '../../constants/distances';
-
 const VisitEntryMiddleArea = () => {
 	const [number, onChangeNumber] = React.useState('');
 
