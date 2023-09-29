@@ -30,7 +30,7 @@ const VisitEntryMiddleArea = () => {
 
 const styles = StyleSheet.create({
 	visitEntryContainer: {
-		paddingVertical: distances.defaultDistance,
+		padding: distances.defaultDistance,
 		backgroundColor: colors.white,
 		marginHorizontal: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,

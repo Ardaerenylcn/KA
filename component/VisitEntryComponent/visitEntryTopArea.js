@@ -44,11 +44,10 @@ const VisitEntryTopArea = ({ visitEntryStoreCode, visitEntryStoreName }) => {
 
 const styles = StyleSheet.create({
 	visitEntryContainer: {
-		paddingVertical: distances.defaultDistance,
+		padding: distances.defaultDistance,
 		backgroundColor: colors.white,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
-		marginTop: distances.defaultDistance,
 		shadowOffset: {
 			width: 0,
 			height: 2,

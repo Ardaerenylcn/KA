@@ -1,14 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../../../constants/colors';
-import ArizaButton from '../../../buttons/DefectButton';
+import DefectButton from '../../../buttons/DefectButton';
 import distances from '../../../../constants/distances';
 
-const DefectNoticeBodyComponent = ({
-	faultCode,
-	faultProduct,
-	argeement,
-}) => {
+const DefectNoticeBodyComponent = ({ faultCode, faultProduct, argeement }) => {
 	return (
 		<View style={styles.ArızaBildirimiComponentBody}>
 			<Text style={styles.FaultCode}>{faultCode}</Text>
@@ -17,7 +13,7 @@ const DefectNoticeBodyComponent = ({
 					<Text>{faultProduct} </Text>
 				</View>
 				<TouchableOpacity style={styles.Button}>
-					<ArizaButton />
+					<DefectButton />
 				</TouchableOpacity>
 			</View>
 			<Text style={styles.ArgeementText}>Sözleşme NO.: {argeement}</Text>
