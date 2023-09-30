@@ -4,47 +4,53 @@ import colors from '../../../../constants/colors';
 import DefectButton from '../../../buttons/DefectButton';
 import distances from '../../../../constants/distances';
 
-const DefectNoticeBodyComponent = ({ faultCode, faultProduct, argeement }) => {
+const DefectNoticeBodyComponent = ({ faultCode, faultProduct, agreement }) => {
 	return (
-		<View style={styles.ArızaBildirimiComponentBody}>
-			<Text style={styles.FaultCode}>{faultCode}</Text>
-			<View style={styles.ArızaBildirimiComponentBodyButtonAndProduct}>
-				<View style={styles.FaultProduct}>
-					<Text>{faultProduct} </Text>
+		<View style={styles.defectNoticeBodyComponentContainer}>
+			<Text style={styles.defectNoticeBodyComponentfaultCodeText}>
+				{faultCode}
+			</Text>
+			<View style={styles.defectNoticeBodyComponentProductAndButtonContainer}>
+				<View style={styles.defectNoticeBodyComponentProductContainer}>
+					<Text>{faultProduct}</Text>
 				</View>
-				<TouchableOpacity style={styles.Button}>
+				<TouchableOpacity
+					style={styles.defectNoticeBodyComponentButtonContainer}
+				>
 					<DefectButton />
 				</TouchableOpacity>
 			</View>
-			<Text style={styles.ArgeementText}>Sözleşme NO.: {argeement}</Text>
+			<Text style={styles.defectNoticeBodyComponentAgreementText}>
+				Sözleşme NO.: {agreement}
+			</Text>
 		</View>
 	);
 };
 
 const styles = StyleSheet.create({
-	ArızaBildirimiComponentBody: {
+	defectNoticeBodyComponentContainer: {
 		flex: 1,
 		backgroundColor: colors.white,
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
 	},
-	FaultCode: {
+	defectNoticeBodyComponentfaultCodeText: {
 		padding: distances.quarterDistance,
 	},
-	ArızaBildirimiComponentBodyButtonAndProduct: {
+	defectNoticeBodyComponentProductAndButtonContainer: {
 		flex: 1,
 		flexDirection: 'row',
 		paddingHorizontal: distances.quarterDistance,
 	},
-	FaultProduct: {
+	defectNoticeBodyComponentProductContainer: {
 		backgroundColor: 'white',
 		flex: 0.6,
 	},
-	Button: {
+	defectNoticeBodyComponentButtonContainer: {
 		flex: 0.5,
 		alignItems: 'flex-end',
 	},
-	ArgeementText: {
+	defectNoticeBodyComponentAgreementText: {
 		padding: distances.quarterDistance,
 	},
 });

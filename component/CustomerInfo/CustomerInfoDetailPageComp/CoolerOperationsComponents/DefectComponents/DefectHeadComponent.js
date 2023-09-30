@@ -8,23 +8,23 @@ const DefectHeadComponent = ({
 	storeFullName,
 	address,
 	serialNumber,
-	collerName,
+	coolerName,
 	coolerDesc,
 	directorate,
 }) => {
 	return (
-		<View style={styles.arizaHeadComponentStyle}>
-			<View style={styles.arizaHeadStoreArea}>
+		<View style={styles.defectHeadComponentContainer}>
+			<View style={styles.defectHeadComponentStoreInfoContainer}>
 				<Text>{storeCode}</Text>
 				<Text>{storeFullName}</Text>
 				<Text style={styles.greyText}>{directorate}</Text>
 				<Text style={styles.greyText}>{address}</Text>
 			</View>
-			<View style={styles.arizaHeadStoreArea}>
+			<View style={styles.defectHeadComponenSerialNumberContainer}>
 				<Text>{serialNumber}</Text>
-				<Text style={styles.greyText}>Seri No.</Text>
-				<View style={styles.arizaHeadStoreArea}>
-					<Text>{collerName}</Text>
+				<Text style={styles.defectHeadComponentSerialNumberText}>Seri No.</Text>
+				<View style={styles.defectHeadComponentCoolerInfoContainer}>
+					<Text>{coolerName}</Text>
 					<Text style={styles.greyText}>{coolerDesc}</Text>
 				</View>
 			</View>
@@ -33,7 +33,7 @@ const DefectHeadComponent = ({
 };
 
 const styles = StyleSheet.create({
-	arizaHeadComponentStyle: {
+	defectHeadComponentContainer: {
 		flex: 0.1,
 		justifyContent: 'center',
 		marginHorizontal: distances.defaultDistance,
@@ -49,11 +49,20 @@ const styles = StyleSheet.create({
 		shadowRadius: 4,
 		elevation: 5,
 	},
-	arizaHeadStoreArea: {
+	defectHeadComponentStoreInfoContainer: {
 		padding: distances.defaultDistance,
 	},
 	greyText: {
 		color: colors.grey,
+	},
+	defectHeadComponenSerialNumberContainer: {
+		padding: distances.defaultDistance,
+	},
+	defectHeadComponentSerialNumberText: {
+		color: colors.grey,
+	},
+	defectHeadComponentCoolerInfoContainer: {
+		padding: distances.defaultDistance,
 	},
 });
 

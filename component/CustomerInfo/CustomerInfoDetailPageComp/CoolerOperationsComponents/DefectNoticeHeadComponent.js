@@ -1,24 +1,28 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import colors from '../../../../constants/colors';
 import distances from '../../../../constants/distances';
+
 const DefectNoticeHeadComponent = ({ storeCode, storeFullName }) => {
 	return (
-		<View style={styles.ArızaBildirimiComponentMainContainer}>
-			<View style={styles.ArızaBildirimiComponentHeadContainer}>
-				<View style={styles.ArızaBildirimiComponentHeadContainerTextArea}>
+		<View style={styles.defectNoticeHeadComponentMainContainer}>
+			<View style={styles.defectNoticeHeadContainer}>
+				<View style={styles.defectNoticeHeadTextArea}>
 					<Text>{storeCode}</Text>
-					<Text style={styles.ArızaBildirimiStoreName}>{storeFullName}</Text>
+					<Text style={styles.defectNoticeHeadComponentStoreName}>
+						{storeFullName}
+					</Text>
 				</View>
 			</View>
 		</View>
 	);
 };
+
 const styles = StyleSheet.create({
-	ArızaBildirimiComponentMainContainer: {
+	defectNoticeHeadComponentMainContainer: {
 		flex: 1,
 	},
-	ArızaBildirimiComponentHeadContainer: {
+	defectNoticeHeadContainer: {
 		flex: 0.1,
 		justifyContent: 'center',
 		marginHorizontal: distances.defaultDistance,
@@ -34,11 +38,10 @@ const styles = StyleSheet.create({
 		shadowRadius: 4,
 		elevation: 5,
 	},
-
-	ArızaBildirimiComponentHeadContainerTextArea: {
+	defectNoticeHeadTextArea: {
 		marginHorizontal: distances.defaultDistance,
 	},
-	ArızaBildirimiStoreName: {
+	defectNoticeHeadComponentStoreName: {
 		color: colors.grey,
 	},
 });

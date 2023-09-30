@@ -19,6 +19,16 @@ const mockData = [
 		coolerCode: '100176521',
 		coolerDesc: '4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA ',
 	},
+	{
+		id: '4',
+		coolerCode: '100176521',
+		coolerDesc: '4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA ',
+	},
+	{
+		id: '5',
+		coolerCode: '100176521',
+		coolerDesc: '4712 SOGUTUCU EP DOLAP 2 KAPILI 2019 LUNA ',
+	},
 ];
 
 const CoolerInventory = () => {

@@ -24,19 +24,25 @@ const App = () => {
 	const handleSogutucuEnvanteri = () => {
 		navigation.navigate('Sogutucu Envanteri');
 	};
+
 	const handleZiyaretListesiPress = () => {
 		navigation.navigate('Ziyaret Listesi');
 	};
+
 	const handleArizaBildirimiPress = () => {
 		navigation.navigate('Ariza Bildirimi');
 	};
+
 	const handleKurulumPress = () => {
 		navigation.navigate('Kurulum');
 	};
+
 	const handleSokmePress = () => {
 		navigation.navigate('Sokme');
 	};
+
 	const navigation = useNavigation();
+
 	const data = [
 		{ text: 'Ziyaret Listesi', icon: 'angle-right' },
 		{ text: 'Soğutucu Envanteri', icon: 'angle-right' },
@@ -75,45 +81,53 @@ const App = () => {
 	let iconName = isExpanded ? 'angle-down' : 'angle-right';
 
 	return (
-		<View style={styles.container}>
-			<ScrollView style={styles.listContainer}>
+		<View style={styles.customerInfoDetailComponentContainer}>
+			<ScrollView style={styles.customerInfoDetailComponentlistContainer}>
 				{data.map((item, index) => (
 					<TouchableOpacity
 						key={index}
 						style={[
-							styles.listItem,
+							styles.customerInfoDetailComponentListItem,
 							item.text === 'Soğutucu İşlemleri' ? styles.noBorder : null,
 						]}
 						onPress={() => handleItemPress(item)}
 					>
 						{item.text === 'Ziyaret Listesi' ? (
 							<TouchableOpacity onPress={handleZiyaretListesiPress}>
-								<Text style={styles.text}>{item.text}</Text>
+								<Text style={styles.customerInfoDetailComponentHandleText}>
+									{item.text}
+								</Text>
 							</TouchableOpacity>
 						) : item.text === 'Soğutucu Envanteri' ? (
 							<TouchableOpacity onPress={handleSogutucuEnvanteri}>
-								<Text style={styles.text}>{item.text}</Text>
+								<Text style={styles.customerInfoDetailComponentHandleText}>
+									{item.text}
+								</Text>
 							</TouchableOpacity>
 						) : item.text === 'Soğutucu Ekipman Sayımı' ? (
 							<TouchableOpacity onPress={handleSogutucuEkipmanSayimi}>
-								<Text style={styles.text}>{item.text}</Text>
+								<Text style={styles.customerInfoDetailComponentHandleText}>
+									{item.text}
+								</Text>
 							</TouchableOpacity>
 						) : (
 							<>
-								<Text style={styles.text}>{item.text}</Text>
+								<Text style={styles.customerInfoDetailComponentHandleText}>
+									{item.text}
+								</Text>
 								{item.text === 'Soğutucu İşlemleri' ? (
 									<Icon
 										name={iconName}
 										size={20}
 										color="black"
-										style={styles.icon}
+										style={styles.customerInfoDetailComponentHandleIcon}
 									/>
 								) : (
 									<Icon
 										name={item.icon}
 										size={20}
 										color="black"
-										style={styles.icon}
+										style={styles.customerInfoDetailComponentHandleIcon}
 									/>
 								)}
 							</>
@@ -125,7 +139,7 @@ const App = () => {
 				<View
 					style={[
 						styles.additionalTextContainer,
-						styles.listContainer,
+						styles.customerInfoDetailComponentlistContainer,
 						{ width: viewWidth },
 					]}
 				>
@@ -157,27 +171,43 @@ const App = () => {
 				onRequestClose={hideAlertDialog}
 			>
 				<TouchableWithoutFeedback onPress={hideAlertDialog}>
-					<View style={styles.modalBackground}>
-						<View style={styles.modalContainer}>
-							<View style={styles.Borderarea}>
-								<View style={styles.alertMessageView}>
-									<Text style={styles.alertMessage}>Lütfen seçiniz.</Text>
+					<View style={styles.customerInfoDetailComponentModalBackgrond}>
+						<View style={styles.CustomerInfoDetailComponentmodalContainer}>
+							<View style={styles.customerInfoDetailComponentBorderarea}>
+								<View
+									style={
+										styles.customerInfoDetailComponentModalContainerAlertMessageView
+									}
+								>
+									<Text
+										style={styles.customerInfoDetailComponentModalAlertMessage}
+									>
+										Lütfen seçiniz.
+									</Text>
 								</View>
 							</View>
 
-							<View style={styles.modalContainerTextArea}>
+							<View
+								style={styles.customerInfoDetailComponentModalContainerTextArea}
+							>
 								<TouchableOpacity
 									onPress={() => handleAlertTextPress('Noktada Soğutucu Yok')}
 									style={[
-										styles.alertText,
+										styles.customerInfoDetailModalAlertText,
 										selectedAlertText === 'Noktada Soğutucu Yok' &&
 											styles.selectedAlertText,
 									]}
 								>
 									<View style={styles.modalTextContainer}>
-										<Text style={styles.modalText}>Noktada Soğutucu Yok</Text>
+										<Text style={styles.customerInfoDetailModalText}>
+											Noktada Soğutucu Yok
+										</Text>
 										{selectedAlertText === 'Noktada Soğutucu Yok' && (
-											<View style={styles.iconContainer}>
+											<View
+												style={
+													styles.customerInfoDetailComponentModalIconContainer
+												}
+											>
 												<Image
 													style={styles.correctIconStyle}
 													source={require('../../../assets/icons/ic_correct.png')}
@@ -192,18 +222,22 @@ const App = () => {
 										handleAlertTextPress('Nokta kapalı - müşteri problemi')
 									}
 									style={[
-										styles.alertText,
+										styles.customerInfoDetailModalAlertText,
 										selectedAlertText === 'Noktada Soğutucu Yok' &&
 											styles.selectedAlertText,
 									]}
 								>
 									<View style={styles.modalTextContainer}>
-										<Text style={styles.modalText}>
+										<Text style={styles.customerInfoDetailModalText}>
 											Nokta kapalı - müşteri problemi
 										</Text>
 										{selectedAlertText ===
 											'Nokta kapalı - müşteri problemi' && (
-											<View style={styles.iconContainer}>
+											<View
+												style={
+													styles.customerInfoDetailComponentModalIconContainer
+												}
+											>
 												<Image
 													style={styles.correctIconStyle}
 													source={require('../../../assets/icons/ic_correct.png')}
@@ -215,15 +249,21 @@ const App = () => {
 								<TouchableOpacity
 									onPress={() => handleAlertTextPress('Nokta sezonluk')}
 									style={[
-										styles.alertText,
+										styles.customerInfoDetailModalAlertText,
 										selectedAlertText === 'Nokta sezonluk' &&
 											styles.selectedAlertText,
 									]}
 								>
 									<View style={styles.modalTextContainer}>
-										<Text style={styles.modalText}>Nokta sezonluk</Text>
+										<Text style={styles.customerInfoDetailModalText}>
+											Nokta sezonluk
+										</Text>
 										{selectedAlertText === 'Nokta sezonluk' && (
-											<View style={styles.iconContainer}>
+											<View
+												style={
+													styles.customerInfoDetailComponentModalIconContainer
+												}
+											>
 												<Image
 													style={styles.correctIconStyle}
 													source={require('../../../assets/icons/ic_correct.png')}
@@ -235,15 +275,21 @@ const App = () => {
 								<TouchableOpacity
 									onPress={() => handleAlertTextPress('Sayım yapılacak')}
 									style={[
-										styles.alertText,
+										styles.customerInfoDetailModalAlertText,
 										selectedAlertText === 'Sayım yapılacak' &&
 											styles.selectedAlertText,
 									]}
 								>
 									<View style={styles.modalTextContainer}>
-										<Text style={styles.modalText}>Sayım yapılacak</Text>
+										<Text style={styles.customerInfoDetailModalText}>
+											Sayım yapılacak
+										</Text>
 										{selectedAlertText === 'Sayım yapılacak' && (
-											<View style={styles.iconContainer}>
+											<View
+												style={
+													styles.customerInfoDetailComponentModalIconContainer
+												}
+											>
 												<Image
 													style={styles.correctIconStyle}
 													source={require('../../../assets/icons/ic_correct.png')}
@@ -254,7 +300,7 @@ const App = () => {
 								</TouchableOpacity>
 							</View>
 
-							<View style={styles.buttonContainer}>
+							<View style={styles.customerInfoDetailModalButtonContainer}>
 								<TouchableOpacity
 									onPress={hideAlertDialog}
 									style={[styles.alertButton, styles.cancelButton]}
@@ -275,7 +321,7 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-	container: {
+	customerInfoDetailComponentContainer: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -291,16 +337,16 @@ const styles = StyleSheet.create({
 		shadowRadius: 4,
 		elevation: 5,
 	},
-	listContainer: {
+	customerInfoDetailComponentlistContainer: {
 		width: '100%',
 	},
-	Borderarea: {
+	customerInfoDetailComponentBorderarea: {
 		borderColor: colors.borderColor,
 		width: Dimensions.get('window').width - 80,
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	listItem: {
+	customerInfoDetailComponentListItem: {
 		borderBottomWidth: 1,
 		backgroundColor: colors.backgroundColor,
 		flexDirection: 'row',
@@ -309,11 +355,11 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		borderColor: colors.borderColor,
 	},
-	text: {
+	customerInfoDetailComponentHandleText: {
 		flex: 1,
 		fontSize: fonts.big,
 	},
-	icon: {
+	customerInfoDetailComponentHandleIcon: {
 		marginLeft: distances.defaultDistance,
 		color: 'grey',
 	},
@@ -335,31 +381,29 @@ const styles = StyleSheet.create({
 	noBorder: {
 		borderBottomWidth: 0,
 	},
-
-	//! MODAL --------------------------
-	modalBackground: {
+	customerInfoDetailComponentModalBackgrond: {
 		flex: 1,
 		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	modalContainer: {
+	CustomerInfoDetailComponentmodalContainer: {
 		backgroundColor: colors.white,
 		borderRadius: 10,
 		width: Dimensions.get('window').width - 80,
 		alignItems: 'center',
 		flex: 0.3,
 	},
-	modalContainerTextArea: {
+	customerInfoDetailComponentModalContainerTextArea: {
 		flex: 1,
 		marginTop: distances.defaultDistance,
 		marginLeft: distances.defaultDistanceMinus * 4,
 	},
-	iconContainer: {
+	customerInfoDetailComponentModalIconContainer: {
 		justifyContent: 'flex-end',
 	},
 
-	alertMessageView: {
+	customerInfoDetailComponentModalContainerAlertMessageView: {
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
 		width: Dimensions.get('window').width - 80,
@@ -367,21 +411,21 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		padding: distances.defaultDistance,
 	},
-	alertMessage: {
+	customerInfoDetailComponentModalAlertMessage: {
 		fontSize: fonts.big,
 		fontWeight: 'bold',
 	},
-	modalText: {
+	customerInfoDetailModalText: {
 		justifyContent: 'flex-start',
 	},
-	alertText: {
+	customerInfoDetailModalAlertText: {
 		flexDirection: 'row',
 		alignItems: 'center',
 		paddingVertical: 10,
 		justifyContent: 'flex-start',
 	},
 
-	buttonContainer: {
+	customerInfoDetailModalButtonContainer: {
 		flexDirection: 'row',
 		borderTopWidth: 1,
 		borderColor: colors.borderColor,

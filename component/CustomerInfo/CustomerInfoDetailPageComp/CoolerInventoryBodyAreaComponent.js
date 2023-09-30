@@ -5,25 +5,26 @@ import colors from '../../../constants/colors';
 
 const CoolerInventoryComponentBodyArea = ({ coolerCode, coolerDesc }) => {
 	return (
-		<View style={styles.SogutucuEnvanteriComponentBodyArea}>
+		<View style={styles.coolerInventoryComponentBodyArea}>
 			<Text>{coolerCode}</Text>
-			<Text style={styles.SogutucuEnvanteriComponentBodyAreaCoolerDesc}>
+			<Text style={styles.coolerInventoryComponentBodyAreaCoolerDesc}>
 				{coolerDesc}
 			</Text>
 		</View>
 	);
 };
 
+export default CoolerInventoryComponentBodyArea;
+
 const styles = StyleSheet.create({
-	SogutucuEnvanteriComponentBodyArea: {
+	coolerInventoryComponentBodyArea: {
 		paddingHorizontal: distances.defaultDistance,
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
 		paddingVertical: distances.halfDistance,
 		backgroundColor: colors.white,
 	},
-	SogutucuEnvanteriComponentBodyAreaCoolerDesc: {
+	coolerInventoryComponentBodyAreaCoolerDesc: {
 		color: colors.grey,
 	},
 });
-export default CoolerInventoryComponentBodyArea;
