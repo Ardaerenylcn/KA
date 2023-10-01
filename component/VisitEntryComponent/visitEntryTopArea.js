@@ -10,32 +10,21 @@ const VisitEntryTopArea = ({ visitEntryStoreCode, visitEntryStoreName }) => {
 
 	return (
 		<View style={styles.visitEntryContainer}>
-			<View style={styles.visitEntryContainerText}>
-				<Text style={styles.visitEntryContainerText}>
-					{visitEntryStoreCode}
-				</Text>
-				<View style={styles.border}>
-					<Text
-						style={[styles.visitEntryContainerText, styles.visitEntryStroeText]}
-					>
-						{visitEntryStoreName}
-					</Text>
-				</View>
-				<View style={styles.ilgilibilidirimswitch}>
-					<View>
-						<Text style={[styles.defaultPadding, styles.bigsize]}>
-							İlgililere Bildir
-						</Text>
-					</View>
-					<View style={styles.switch}>
-						<Switch
-							trackColor={{ false: colors.white, true: colors.lightblue }}
-							thumbColor={isEnabled ? colors.white : colors.white}
-							ios_backgroundColor="#F1F1F1"
-							onValueChange={toggleSwitch}
-							value={isEnabled}
-						/>
-					</View>
+			<View style={styles.visitEntyTextArea}>
+				<Text>{visitEntryStoreCode}</Text>
+				<Text style={styles.visitEntryStoreName}>{visitEntryStoreName}</Text>
+			</View>
+			<View style={styles.border}></View>
+			<View style={styles.visitEntyTextAreaSecondSide}>
+				<View style={styles.visitEntrySwitchArea}>
+					<Text style={styles.visitEntrySwitchAreaText}>İlgililere Bildir</Text>
+					<Switch
+						trackColor={{ false: colors.white, true: colors.lightblue }}
+						thumbColor={isEnabled ? colors.white : colors.white}
+						ios_backgroundColor="#F1F1F1"
+						onValueChange={toggleSwitch}
+						value={isEnabled}
+					/>
 				</View>
 			</View>
 		</View>
@@ -56,33 +45,28 @@ const styles = StyleSheet.create({
 		shadowRadius: 4,
 		elevation: 5,
 	},
-	visitEntryContainerText: {
-		marginHorizontal: distances.defaultDistance,
-	},
-	border: {
-		borderBottomWidth: 1,
-		borderColor: colors.borderColor,
-	},
-	defaultPadding: {
+	visitEntyTextArea: {
 		padding: distances.defaultDistance,
 	},
-	ilgilibilidirimswitch: {
+	visitEntyTextAreaSecondSide: {
+		paddingHorizontal: distances.defaultDistance,
+		paddingVertical: distances.quarterDistance,
+	},
+	visitEntrySwitchArea: {
 		flexDirection: 'row',
-		justifyContent: 'space-between',
+		alignItems: 'center',
 	},
-	switch: {
-		justifyContent: 'space-around',
-	},
-	textContainer: {
+	visitEntrySwitchAreaText: {
 		flex: 1,
-	},
-	bigsize: {
 		fontSize: fonts.big,
 	},
-	switchContainer: {},
-	visitEntryStroeText: {
+	visitEntryStoreName: {
 		color: colors.grey,
-		marginBottom: distances.defaultDistance,
+	},
+	border: {
+		flex: 1,
+		borderBottomWidth: 1,
+		borderColor: colors.borderColor,
 	},
 });
 

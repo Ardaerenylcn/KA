@@ -43,19 +43,17 @@ const styles = StyleSheet.create({
 		elevation: 5,
 	},
 	visitEntryTitle: {
-		marginLeft: distances.halfDistance,
 		color: colors.grey,
-		fontWeight: '500',
+		fontWeight: 'bold',
 		marginBottom: distances.halfDistance,
 	},
 	visitEntryTitleContainer: {
 		borderBottomWidth: 1,
 		borderBottomColor: colors.borderColor,
-		marginHorizontal: distances.defaultDistance,
 	},
 	visitEntryDescTextInput: {
 		marginVertical: distances.defaultDistance,
-		marginHorizontal: distances.defaultDistance * 2,
+		marginHorizontal: distances.defaultDistance,
 		padding: distances.halfDistance,
 		height: 70,
 		maxHeight: 70,

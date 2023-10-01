@@ -40,14 +40,13 @@ const styles = StyleSheet.create({
 		elevation: 5,
 	},
 	visitEntryBottomContainerTitleArea: {
-		paddingTop: distances.defaultDistance,
 		marginHorizontal: distances.defaultDistance,
 		borderBottomWidth: 1,
 		borderBottomColor: colors.borderColor,
 	},
 	visitEntryBottomContainerTitleAreaText: {
 		color: colors.grey,
-		fontWeight: '500',
+		fontWeight: 'bold',
 		marginBottom: distances.halfDistance,
 	},
 	visitEntryBottomContainerIconArea: {
