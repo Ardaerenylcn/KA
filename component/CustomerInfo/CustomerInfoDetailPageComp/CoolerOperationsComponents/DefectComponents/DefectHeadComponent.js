@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import distances from '../../../../../constants/distances';
 import colors from '../../../../../constants/colors';
+import styleVariables from '../../../../../Styles/styleVariables';
 
 const DefectHeadComponent = ({
 	storeCode,
@@ -13,7 +14,7 @@ const DefectHeadComponent = ({
 	directorate,
 }) => {
 	return (
-		<View style={styles.defectHeadComponentContainer}>
+		<View style={[styles.defectHeadComponentContainer, styleVariables.shadow]}>
 			<View style={styles.defectHeadComponentStoreInfoContainer}>
 				<Text>{storeCode}</Text>
 				<Text>{storeFullName}</Text>
@@ -41,13 +42,6 @@ const styles = StyleSheet.create({
 		padding: distances.defaultDistance,
 		margin: distances.defaultDistance,
 		borderRadius: 10,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	defectHeadComponentStoreInfoContainer: {
 		padding: distances.defaultDistance,

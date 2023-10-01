@@ -3,13 +3,14 @@ import { Text, View, StyleSheet, Switch, ScrollView } from 'react-native';
 import colors from '../../constants/colors';
 import fonts from '../../constants/fonts';
 import distances from '../../constants/distances';
+import styleVariables from '../../Styles/styleVariables';
 
 const VisitEntryTopArea = ({ visitEntryStoreCode, visitEntryStoreName }) => {
 	const [isEnabled, setIsEnabled] = useState(false);
 	const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
 	return (
-		<View style={styles.visitEntryContainer}>
+		<View style={[styles.visitEntryContainer, styleVariables.shadow]}>
 			<View style={styles.visitEntyTextArea}>
 				<Text>{visitEntryStoreCode}</Text>
 				<Text style={styles.visitEntryStoreName}>{visitEntryStoreName}</Text>
@@ -37,13 +38,6 @@ const styles = StyleSheet.create({
 		backgroundColor: colors.white,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	visitEntyTextArea: {
 		padding: distances.defaultDistance,

@@ -14,11 +14,11 @@ const DefectBodyComponent = ({ serialNumber, collerName }) => {
 	const [text, onChangeText] = useState('');
 
 	return (
-		<View style={styles.ArizaBodyComponentContainer}>
-			<TouchableOpacity style={styles.ArizaBodyComponentContainerHead}>
-				<View style={styles.ArizaBodyComponentContainerHeadArea}>
+		<View style={styles.defectBodyComponentContainer}>
+			<TouchableOpacity style={styles.defectBodyComponentContainerHead}>
+				<View style={styles.defectBodyComponentContainerHeadArea}>
 					<Text>ARIZA KAYNAĞI</Text>
-					<View style={styles.ArizaBodyComponentContainerHeadSelection}>
+					<View style={styles.defectBodyComponentContainerHeadSelection}>
 						<Text style={{ color: colors.borderColor }}>İşlem Seçiniz</Text>
 						<Text>.</Text>
 					</View>
@@ -39,19 +39,19 @@ const DefectBodyComponent = ({ serialNumber, collerName }) => {
 };
 
 const styles = StyleSheet.create({
-	ArizaBodyComponentContainer: {
+	defectBodyComponentContainer: {
 		flex: 1,
 		backgroundColor: colors.white,
 	},
-	ArizaBodyComponentContainerHead: {
+	defectBodyComponentContainerHead: {
 		flex: 1,
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
 	},
-	ArizaBodyComponentContainerHeadSelection: {
+	defectBodyComponentContainerHeadSelection: {
 		flexDirection: 'row',
 	},
-	ArizaBodyComponentContainerHeadArea: {
+	defectBodyComponentContainerHeadArea: {
 		marginHorizontal: distances.defaultDistance,
 		flexDirection: 'row',
 		justifyContent: 'space-between',

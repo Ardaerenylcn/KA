@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		height: 15,
 		marginRight: distances.quarterDistance,
 	},
-	Sokme_ButtonText:{
-	color:colors.white,
-	}
+	Sokme_ButtonText: {
+		color: colors.white,
+	},
 });

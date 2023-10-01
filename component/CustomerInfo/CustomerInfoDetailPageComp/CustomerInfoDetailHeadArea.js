@@ -10,6 +10,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
 import fonts from '../../../constants/fonts';
+import styleVariables from '../../../Styles/styleVariables';
 
 const CustomerInfoDetailHeadArea = ({
 	customerInfoDetailCustomerID,
@@ -24,7 +25,12 @@ const CustomerInfoDetailHeadArea = ({
 
 	return (
 		<SafeAreaView style={styles.SafeAreaView}>
-			<View style={styles.customerInfoDetailHeadAreaContainer}>
+			<View
+				style={[
+					styles.customerInfoDetailHeadAreaContainer,
+					styleVariables.shadow,
+				]}
+			>
 				<View
 					style={styles.customerInfoDetailHeadAreaContainerIDandVisitButton}
 				>
@@ -80,13 +86,6 @@ const styles = StyleSheet.create({
 		backgroundColor: colors.white,
 		margin: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	customerInfoDetailHeadAreaContainerIDandVisitButton: {
 		flexDirection: 'row',

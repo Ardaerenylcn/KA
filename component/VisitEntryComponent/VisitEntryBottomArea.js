@@ -3,10 +3,11 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../../constants/colors';
 import distances from '../../constants/distances';
 import { FontAwesome } from '@expo/vector-icons';
+import styleVariables from '../../Styles/styleVariables';
 
 const VisitEntryBottomArea = () => {
 	return (
-		<View style={styles.visitEntryBottomContainer}>
+		<View style={[styles.visitEntryBottomContainer, styleVariables.shadow]}>
 			<View style={styles.visitEntryBottomContainerTitleArea}>
 				<Text style={styles.visitEntryBottomContainerTitleAreaText}>
 					FOTOĞRAF EKLE
@@ -31,13 +32,6 @@ const styles = StyleSheet.create({
 		marginHorizontal: distances.defaultDistance,
 		borderRadius: distances.quarterDistance,
 		height: 200,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	visitEntryBottomContainerTitleArea: {
 		marginHorizontal: distances.defaultDistance,

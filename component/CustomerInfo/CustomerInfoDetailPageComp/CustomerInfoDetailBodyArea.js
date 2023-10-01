@@ -15,6 +15,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../../../constants/colors';
 import distances from '../../../constants/distances';
 import fonts from '../../../constants/fonts';
+import styleVariables from '../../../Styles/styleVariables';
 
 const App = () => {
 	const handleSogutucuEkipmanSayimi = () => {
@@ -81,7 +82,12 @@ const App = () => {
 	let iconName = isExpanded ? 'angle-down' : 'angle-right';
 
 	return (
-		<View style={styles.customerInfoDetailComponentContainer}>
+		<View
+			style={[
+				styles.customerInfoDetailComponentContainer,
+				styleVariables.shadow,
+			]}
+		>
 			<ScrollView style={styles.customerInfoDetailComponentlistContainer}>
 				{data.map((item, index) => (
 					<TouchableOpacity
@@ -329,13 +335,6 @@ const styles = StyleSheet.create({
 		padding: distances.defaultDistance,
 		margin: distances.defaultDistance,
 		borderRadius: 10,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	customerInfoDetailComponentlistContainer: {
 		width: '100%',
@@ -422,7 +421,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		paddingVertical: 10,
-		justifyContent: 'flex-start',
+		flex: 1,
 	},
 
 	customerInfoDetailModalButtonContainer: {

@@ -2,10 +2,13 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import distances from '../../../../constants/distances';
 import colors from '../../../../constants/colors';
+import styleVariables from '../../../../Styles/styleVariables';
 
 const DismantleDetailComponent = ({ storeCode, storeFullName }) => {
 	return (
-		<View style={styles.dismantleDetailComponentContainer}>
+		<View
+			style={[styles.dismantleDetailComponentContainer, styleVariables.shadow]}
+		>
 			<View style={styles.dismantleDetailHeadContainer}>
 				<View style={styles.dismantleDetailTextArea}>
 					<Text>{storeCode}</Text>
@@ -28,13 +31,6 @@ const styles = StyleSheet.create({
 		padding: distances.defaultDistance,
 		margin: distances.defaultDistance,
 		borderRadius: 10,
-		shadowOffset: {
-			width: 0,
-			height: 2,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4,
-		elevation: 5,
 	},
 	dismantleDetailTextArea: {
 		marginHorizontal: distances.defaultDistance,
