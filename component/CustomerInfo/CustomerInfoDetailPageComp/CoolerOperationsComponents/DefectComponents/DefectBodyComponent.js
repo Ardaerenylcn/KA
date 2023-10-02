@@ -5,6 +5,7 @@ import {
 	StyleSheet,
 	TouchableOpacity,
 	TextInput,
+	Image,
 } from 'react-native';
 import distances from '../../../../../constants/distances';
 import colors from '../../../../../constants/colors';
@@ -20,7 +21,10 @@ const DefectBodyComponent = ({ serialNumber, collerName }) => {
 					<Text>ARIZA KAYNAĞI</Text>
 					<View style={styles.defectBodyComponentContainerHeadSelection}>
 						<Text style={{ color: colors.borderColor }}>İşlem Seçiniz</Text>
-						<Text>.</Text>
+						<Image
+							style={styles.tirangleDown}
+							source={require('../../../../../assets/icons/ic-triangle-down.png')}
+						/>
 					</View>
 				</View>
 			</TouchableOpacity>
@@ -50,6 +54,8 @@ const styles = StyleSheet.create({
 	},
 	defectBodyComponentContainerHeadSelection: {
 		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	defectBodyComponentContainerHeadArea: {
 		marginHorizontal: distances.defaultDistance,
@@ -65,6 +71,11 @@ const styles = StyleSheet.create({
 		height: 120,
 		textAlignVertical: 'top',
 		fontSize: fonts.big,
+	},
+	tirangleDown: {
+		width: 10,
+		height: 7,
+		marginHorizontal: distances.halfDistance,
 	},
 });
 
