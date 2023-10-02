@@ -10,7 +10,7 @@ export default function Kurulum() {
 			<>
 				<InstallmentComponent />
 				<InstallmentDetailComponent
-					code={'d049'}
+					code={'4049'}
 					description={'DARK DİKEY TEK KAPILI'}
 				/>
 				<InstallmentDetailComponent 
