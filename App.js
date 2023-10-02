@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
 import CustomerInfo from './Screens/CustomerInfoPage';
+import SellerDistributorStocks from './Screens/SellerDistributorStocks';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,7 @@ function Customer() {
 }
 
 function ProfileScreen() {
-	return null;
+	return <SellerDistributorStocks />;
 }
 
 function MyTabs() {
@@ -49,9 +50,8 @@ function MyTabs() {
 				name="Neredeyim"
 				component={ProfileScreen}
 				options={{
-					headerTitle: 'KA MOBiL',
+					headerTitle: 'Bayi/Dist. Stokları',
 					headerTintColor: 'black',
-					headerShown: false,
 				}}
 			/>
 		</Tab.Navigator>
