@@ -3,7 +3,7 @@ import React from 'react';
 import colors from '../../constants/colors';
 import distances from '../../constants/distances';
 
-const SellerDistributorStockHeader = ({ product }) => {
+const SellerDistributorAndProductStockHeader = ({ product }) => {
 	return (
 		<View style={styles.SellerDistributorStockHeaderContainer}>
 			<View style={styles.SellerDistributorStockHeaderContainerTextArea}>
@@ -19,7 +19,7 @@ const SellerDistributorStockHeader = ({ product }) => {
 					<Text style={styles.SellerDistributorStockHeaderTextStyle}>
 						GEL.KAN.
 					</Text>
-				</View> 
+				</View>
 			</View>
 		</View>
 	);
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
 	},
 	SellerDistributorStockHeaderContainerTextAreaLeft: {
 		marginLeft: distances.defaultDistance,
+		flex: 1,
 	},
 
 	SellerDistributorStockHeaderTextStyle: {
@@ -56,4 +57,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default SellerDistributorStockHeader;
+export default SellerDistributorAndProductStockHeader;

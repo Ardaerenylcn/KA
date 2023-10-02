@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Announcement from './component/Announcement';
 import CustomerInfo from './Screens/CustomerInfoPage';
 import SellerDistributorStocks from './Screens/SellerDistributorStocks';
+import ProductPage from './Screens/ProductStockPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,8 @@ function Customer() {
 }
 
 function ProfileScreen() {
-	return <SellerDistributorStocks />;
+	//return <SellerDistributorStocks/>
+	return <ProductPage />;
 }
 
 function MyTabs() {

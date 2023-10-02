@@ -6,7 +6,7 @@ import {
 	StyleSheet,
 	Image,
 } from 'react-native';
-import SellerDistributorStockHeader from '../component/SellerDistributorStockComponents/SellerDistributorStockHeader';
+import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistributorAndProductStockHeader';
 import SellerDistirbutorStockBody from '../component/SellerDistributorStockComponents/SellerDistirbutorStockBody';
 import colors from '../constants/colors';
 
@@ -40,7 +40,7 @@ const SellerDistributorStocks = () => {
 				</TouchableOpacity>
 			)}
 			<ScrollView ref={scrollViewRef} onScroll={handleScroll}>
-				<SellerDistributorStockHeader product={'Efes Pilsen'} />
+				<SellerDistributorAndProductStockHeader product={'Efes Pilsen'} />
 				<SellerDistirbutorStockBody
 					productCode={'150003'}
 					productFullName={'EFES PİLSEN KAS 50 CL'}
@@ -120,7 +120,9 @@ const SellerDistributorStocks = () => {
 					stock={0}
 					gelKan={55}
 				/>
-				<SellerDistributorStockHeader product={'Miller Genuine Draft'} />
+				<SellerDistributorAndProductStockHeader
+					product={'Miller Genuine Draft'}
+				/>
 				<SellerDistirbutorStockBody
 					productCode={'150137'}
 					productFullName={'MGD KL 33 CL NRB'}
