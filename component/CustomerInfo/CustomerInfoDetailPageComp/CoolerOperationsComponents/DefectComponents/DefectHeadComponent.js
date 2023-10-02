@@ -25,7 +25,7 @@ const DefectHeadComponent = ({
 				<Text>{serialNumber}</Text>
 				<Text style={styles.defectHeadComponentSerialNumberText}>Seri No.</Text>
 				<View style={styles.defectHeadComponentCoolerInfoContainer}>
-					<Text>{coolerName}</Text>
+					<Text numberOfLines={1}>{coolerName}</Text>
 					<Text style={styles.greyText}>{coolerDesc}</Text>
 				</View>
 			</View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 		color: colors.grey,
 	},
 	defectHeadComponentCoolerInfoContainer: {
-		padding: distances.defaultDistance,
+		marginTop: distances.defaultDistance * 2,
 	},
 });
 
