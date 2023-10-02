@@ -1,38 +1,36 @@
 import { ScrollView } from 'react-native';
 import React from 'react';
-import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistributorAndProductStockHeader';
+import ProductStockHead from '../component/ProductStockComponent/ProdcutStockHead';
 import ProductStockBody from '../component/ProductStockComponent/ProductStockBody';
 
 const ProductStockPage = () => {
 	return (
 		<>
 			<ScrollView>
-				<SellerDistributorAndProductStockHeader
-					product={'EFES PİLSEN TVA 50 CL KUTU'}
-				/>
+				<ProductStockHead product={'EFES PİLSEN TVA 50 CL KUTU'} />
 				<ProductStockBody
 					productCode={'20032'}
 					distirbutor={'ESENLER-DIST.-İST-HALİÇ'}
-					stock={1200}
-					gelKan={12345}
+					stock={1.529}
+					gelKan={3000}
 				/>
 				<ProductStockBody
-					productCode={'20032'}
-					distirbutor={'ESENLER-DIST.-İST-HALİÇ'}
-					stock={1200}
-					gelKan={12345}
+					productCode={'20174'}
+					distirbutor={'BAYRAMPAŞA DİST.-İST HALİÇ'}
+					stock={1.657}
+					gelKan={2.215}
 				/>
 				<ProductStockBody
-					productCode={'20032'}
-					distirbutor={'ESENLER-DIST.-İST-HALİÇ'}
-					stock={1200}
-					gelKan={12345}
+					productCode={'20039'}
+					distirbutor={'FATİH-DIST.-İST-HALİÇ'}
+					stock={242}
+					gelKan={1.312}
 				/>
 				<ProductStockBody
-					productCode={'20032'}
-					distirbutor={'ESENLER-DIST.-İST-HALİÇ'}
+					productCode={'20224'}
+					distirbutor={'SİLİVRİ-DIST'}
 					stock={1200}
-					gelKan={12345}
+					gelKan={1.289}
 				/>
 			</ScrollView>
 		</>

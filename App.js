@@ -16,9 +16,11 @@ function Customer() {
 	return <CustomerInfo />;
 }
 
-function ProfileScreen() {
-	//return <SellerDistributorStocks/>
+function BayiStk() {
 	return <ProductPage />;
+}
+function SellerDistirbutorStock() {
+	return <SellerDistributorStocks />;
 }
 
 function MyTabs() {
@@ -49,8 +51,16 @@ function MyTabs() {
 			/>
 
 			<Tab.Screen
-				name="Neredeyim"
-				component={ProfileScreen}
+				name="BayiStk"
+				component={BayiStk}
+				options={{
+					headerTitle: 'Bayi/Dist. Stokları',
+					headerTintColor: 'black',
+				}}
+			/>
+			<Tab.Screen
+				name="SellerDistirbutorStock"
+				component={SellerDistributorStocks}
 				options={{
 					headerTitle: 'Bayi/Dist. Stokları',
 					headerTintColor: 'black',

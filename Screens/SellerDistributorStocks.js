@@ -6,7 +6,7 @@ import {
 	StyleSheet,
 	Image,
 } from 'react-native';
-import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistributorAndProductStockHeader';
+import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistirbutorHead';
 import SellerDistirbutorStockBody from '../component/SellerDistributorStockComponents/SellerDistirbutorStockBody';
 import colors from '../constants/colors';
 
