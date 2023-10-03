@@ -5,6 +5,8 @@ import {
 	TouchableOpacity,
 	StyleSheet,
 	Image,
+	Animated,
+	Easing,
 } from 'react-native';
 import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistirbutorHead';
 import SellerDistirbutorStockBody from '../component/SellerDistributorStockComponents/SellerDistirbutorStockBody';
@@ -13,6 +15,7 @@ import colors from '../constants/colors';
 const SellerDistributorStocks = () => {
 	const scrollViewRef = useRef(null);
 	const [isButtonVisible, setIsButtonVisible] = useState(false);
+	const pulseAnimation = useRef(new Animated.Value(1)).current;
 
 	const handleScroll = event => {
 		const yOffset = event.nativeEvent.contentOffset.y;
@@ -26,6 +29,21 @@ const SellerDistributorStocks = () => {
 	const handlePress = () => {
 		if (scrollViewRef.current) {
 			scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
+
+			Animated.sequence([
+				Animated.timing(pulseAnimation, {
+					toValue: 1.2,
+					duration: 200,
+					useNativeDriver: false,
+					easing: Easing.linear,
+				}),
+				Animated.timing(pulseAnimation, {
+					toValue: 1,
+					duration: 200,
+					useNativeDriver: false,
+					easing: Easing.linear,
+				}),
+			]).start();
 		}
 	};
 
@@ -33,14 +51,19 @@ const SellerDistributorStocks = () => {
 		<View>
 			{isButtonVisible && (
 				<TouchableOpacity style={styles.floatingButton} onPress={handlePress}>
+					<Animated.View
+						style={[styles.pulse, { transform: [{ scale: pulseAnimation }] }]}
+					/>
 					<Image
 						style={styles.tinyArrowLogo}
 						source={require('../assets/icons/ic-arrow-up.png')}
 					/>
 				</TouchableOpacity>
 			)}
+
 			<ScrollView ref={scrollViewRef} onScroll={handleScroll}>
 				<SellerDistributorAndProductStockHeader product={'Efes Pilsen'} />
+
 				<SellerDistirbutorStockBody
 					productCode={'150003'}
 					productFullName={'EFES PİLSEN KAS 50 CL'}
@@ -194,6 +217,14 @@ const styles = StyleSheet.create({
 	tinyArrowLogo: {
 		width: 28,
 		height: 28,
+	},
+	pulse: {
+		position: 'absolute',
+		width: 52,
+		height: 52,
+		borderRadius: 26,
+		backgroundColor: colors.efesblue,
+		opacity: 1,
 	},
 });
 export default SellerDistributorStocks;
