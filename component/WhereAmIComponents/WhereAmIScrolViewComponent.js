@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import colors from '../../constants/colors';
 import distances from '../../constants/distances';
-import { color } from 'react-native-elements/dist/helpers';
+
 
 const WhereAmIScrolViewComponent = ({ StoreCode, StoreFullname }) => {
 	return (
@@ -48,5 +48,40 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 		backgroundColor: colors.white,
 	},
+	installmentInputContainer: {
+		backgroundColor: colors.borderColor,
+		flexDirection: 'row',
+		alignItems: 'center',
+		borderRadius: distances.halfDistance,
+		padding: distances.quarterDistance,
+		flex: 1,
+	},
+	installmentIcon: {
+		width: 24,
+		height: 24,
+		marginRight: 8,
+	},
+	installmentInputMainContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		padding: distances.quarterDistance,
+		marginTop: distances.defaultDistance,
+	},
+	installmentInputBox: {
+		flex: 1,
+	},
+
+	cancelButton: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		padding: 8,
+		marginLeft: distances.quarterDistance,
+		backgroundColor: colors.white,
+		borderRadius: distances.halfDistance,
+	},
+	installmentCancelText: {
+		color: colors.lightblue,
+	},
 });
+
 export default WhereAmIScrolViewComponent;
