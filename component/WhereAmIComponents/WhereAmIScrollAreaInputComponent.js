@@ -48,7 +48,6 @@ const WhereAmIScrollAreaInputComponent = () => {
 				</TouchableOpacity>
 				<TextInput
 					returnKeyType="done"
-					clearButtonMode="always"
 					autoCapitalize="none"
 					autoCorrect={false}
 					ref={inputRef}
