@@ -1,72 +1,111 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import {
 	View,
-	StyleSheet,
-	TextInput,
-	Image,
 	Text,
-	ScrollView,
+	TextInput,
+	StyleSheet,
+	Image,
 	TouchableOpacity,
 } from 'react-native';
 import colors from '../../constants/colors';
-import fonts from '../../constants/fonts';
 import distances from '../../constants/distances';
-import styleVariables from '../../Styles/styleVariables';
 
-const WhereAmIScrollAreaInputComponent = ({ StoreCode, StoreFullname }) => {
-	const [text, onChangeText] = React.useState('');
+const WhereAmIScrollAreaInputComponent = () => {
+	const [number, onChangeNumber] = useState('');
+	const inputRef = useRef(null);
+	const [showCancel, setShowCancel] = useState(false);
+
+	const openKeyboard = () => {
+		if (inputRef.current) {
+			inputRef.current.focus();
+			setShowCancel(true);
+		}
+	};
+
+	const closeKeyboard = () => {
+		if (inputRef.current) {
+			inputRef.current.blur();
+			setShowCancel(false);
+		}
+	};
+
+	const clearInput = () => {
+		onChangeNumber('');
+		if (inputRef.current) {
+			inputRef.current.clear();
+		}
+		setShowCancel(false);
+	};
 
 	return (
-		<View style={styles.WhereAmIScrolAreaContainer}>
-			<View style={styles.InputUpperArea}>
-				<View style={styles.InputArea}>
-					<View style={styles.InputAreaIcon}>
-						<Image
-							source={require('../../assets/icons/ic_carbon_search.png')}
-							style={styles.WhereAmIScrolAreaIcon}
-						/>
-					</View>
-					<TextInput
-						returnKeyType="done"
-						clearButtonMode="always"
-						autoCapitalize="none"
-						autoCorrect={false}
-						onChangeText={onChangeText}
-						placeholder={'Müşteri ara...'}
-						placeholderTextColor={colors.grey}
-						style={styles.WhereAmIInput}
+		<View style={styles.WhereAmIScrollAreaInputMainContainer}>
+			<View style={styles.WhereAmIScrollAreaInputContainer}>
+				<TouchableOpacity onPress={openKeyboard}>
+					<Image
+						source={require('../../assets/icons/ic_carbon_search.png')}
+						style={styles.inputIcon}
 					/>
-				</View>
+				</TouchableOpacity>
+				<TextInput
+					ref={inputRef}
+					style={styles.WhereAmIInput}
+					onChangeText={text => {
+						onChangeNumber(text);
+						setShowCancel(!!text);
+					}}
+					value={number}
+					placeholder="Soğutucu adı, Soğutucu kodu ara..."
+					onFocus={openKeyboard}
+					onBlur={closeKeyboard}
+				/>
 			</View>
+			{showCancel && (
+				<TouchableOpacity onPress={clearInput} style={styles.cancelButton}>
+					<Text style={styles.WhereAmIICancelText}>İptal</Text>
+				</TouchableOpacity>
+			)}
 		</View>
 	);
 };
 
 const styles = StyleSheet.create({
-	WhereAmIScrolAreaContainer: {},
-	InputUpperArea: {
+	WhereAmIScrollAreaInputMainContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
 		backgroundColor: colors.grey2,
-		padding: distances.defaultDistance,
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
+		paddingHorizontal: distances.defaultDistance,
+		paddingVertical: distances.quarterDistance,
 	},
-	WhereAmIInput: {
-		padding: distances.quarterDistance,
-		flex: 1,
-	},
-	WhereAmIScrolAreaIcon: {
-		width: 16,
-		height: 16,
-	},
-	InputArea: {
+	WhereAmIScrollAreaInputContainer: {
 		flexDirection: 'row',
+		alignItems: 'center',
+		flex: 1,
 		backgroundColor: colors.borderColor,
 		borderRadius: 6,
+		paddingHorizontal: distances.quarterDistance,
 	},
-	InputAreaIcon: {
+	inputIcon: {
+		width: 16,
+		height: 16,
+		marginRight: distances.quarterDistance,
+		tintColor: colors.grey, // Change the color to the desired color
+	},
+	WhereAmIInput: {
+		flex: 1,
+		paddingVertical: 8,
+		color: colors.black,
+	},
+	cancelButton: {
 		justifyContent: 'center',
 		alignItems: 'center',
+		padding: 8,
 		marginLeft: distances.quarterDistance,
+		borderRadius: distances.halfDistance,
+	},
+	WhereAmIICancelText: {
+		color: colors.lightblue,
 	},
 });
 
