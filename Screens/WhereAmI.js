@@ -1,13 +1,14 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 
-import WhereAmIScrollAreaInputComponent from '../component/WhereAmIComponents/WhereAmIScrollAreaInputComponent';
 import WhereAmIScrolViewComponent from '../component/WhereAmIComponents/WhereAmIScrolViewComponent';
+import PlaceHolder from '../component/Placeholder/PlaceHolder';
 
 const WhereAmI = () => {
 	return (
 		<>
-			<WhereAmIScrollAreaInputComponent
+			<PlaceHolder
+				placeholder={'Malzeme ara...'}
 				StoreCode={'289623'}
 				StoreFullname={'BUYAKA AVM İSTANBUL MM MİGROS'}
 			/>
