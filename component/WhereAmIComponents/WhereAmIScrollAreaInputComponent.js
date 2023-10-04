@@ -47,6 +47,10 @@ const WhereAmIScrollAreaInputComponent = () => {
 					/>
 				</TouchableOpacity>
 				<TextInput
+					returnKeyType="done"
+					clearButtonMode="always"
+					autoCapitalize="none"
+					autoCorrect={false}
 					ref={inputRef}
 					style={styles.WhereAmIInput}
 					onChangeText={text => {
@@ -57,6 +61,7 @@ const WhereAmIScrollAreaInputComponent = () => {
 					placeholder="Soğutucu adı, Soğutucu kodu ara..."
 					onFocus={openKeyboard}
 					onBlur={closeKeyboard}
+					placeholderTextColor={colors.grey}
 				/>
 			</View>
 			{showCancel && (
