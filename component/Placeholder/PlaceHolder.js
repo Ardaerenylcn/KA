@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 	WhereAmIScrollAreaInputMainContainer: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		backgroundColor: colors.grey2,
+		backgroundColor: colors.white,
 		borderBottomWidth: 1,
 		borderColor: colors.borderColor,
 		paddingHorizontal: distances.defaultDistance,
