@@ -122,9 +122,6 @@ const PriceListReport = () => {
 				{
 					productCode: '7891011',
 					productFullName: 'Product 2',
-
-					stock: 75,
-					gelKan: 25,
 				},
 			],
 		},
@@ -134,16 +131,10 @@ const PriceListReport = () => {
 				{
 					productCode: '111213',
 					productFullName: 'Product 3',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '141516',
 					productFullName: 'Product 4',
-
-					stock: 50,
-					gelKan: 10,
 				},
 			],
 		},
@@ -153,16 +144,10 @@ const PriceListReport = () => {
 				{
 					productCode: '171819',
 					productFullName: 'Product 5',
-
-					stock: 300,
-					gelKan: 150,
 				},
 				{
 					productCode: '202122',
 					productFullName: 'Product 6',
-
-					stock: 25,
-					gelKan: 5,
 				},
 			],
 		},
@@ -172,16 +157,10 @@ const PriceListReport = () => {
 				{
 					productCode: '232425',
 					productFullName: 'Product 7',
-
-					stock: 75,
-					gelKan: 20,
 				},
 				{
 					productCode: '262728',
 					productFullName: 'Product 8',
-
-					stock: 125,
-					gelKan: 60,
 				},
 			],
 		},
@@ -191,16 +170,10 @@ const PriceListReport = () => {
 				{
 					productCode: '293031',
 					productFullName: 'Product 9',
-
-					stock: 150,
-					gelKan: 70,
 				},
 				{
 					productCode: '323334',
 					productFullName: 'Product 10',
-
-					stock: 45,
-					gelKan: 15,
 				},
 			],
 		},
@@ -210,30 +183,18 @@ const PriceListReport = () => {
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 			],
 		},
@@ -243,16 +204,10 @@ const PriceListReport = () => {
 				{
 					productCode: '414243',
 					productFullName: 'Product 13',
-
-					stock: 300,
-					gelKan: 150,
 				},
 				{
 					productCode: '444546',
 					productFullName: 'Product 14',
-
-					stock: 40,
-					gelKan: 10,
 				},
 			],
 		},
@@ -262,30 +217,18 @@ const PriceListReport = () => {
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 			],
 		},
@@ -299,23 +242,14 @@ const PriceListReport = () => {
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 			],
 		},
@@ -325,30 +259,18 @@ const PriceListReport = () => {
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 				{
 					productCode: '353637',
 					productFullName: 'Product 11',
-
-					stock: 200,
-					gelKan: 100,
 				},
 				{
 					productCode: '383940',
 					productFullName: 'Product 12',
-
-					stock: 85,
-					gelKan: 30,
 				},
 			],
 		},
