@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
 		paddingHorizontal: distances.quarterDistance,
 	},
 	defectNoticeBodyComponentProductContainer: {
-		backgroundColor: 'white',
+		backgroundColor: colors.white,
 		flex: 0.6,
 	},
 	defectNoticeBodyComponentButtonContainer: {

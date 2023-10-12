@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
 	View,
 	TouchableOpacity,
@@ -6,19 +6,74 @@ import {
 	Image,
 	Animated,
 	Easing,
-	Text,
 	SafeAreaView,
-	StatusBar,
 	SectionList,
 } from 'react-native';
 import SellerDistributorAndProductStockHeader from '../component/SellerDistributorStockComponents/SellerDistirbutorHead';
 import SellerDistirbutorStockBody from '../component/SellerDistributorStockComponents/SellerDistirbutorStockBody';
 import colors from '../constants/colors';
 
+const removeLeadingZeros = numberString => {
+	const number = parseInt(numberString, 10);
+	return number.toString();
+};
+
+const fetchDataFromApi = async () => {
+	try {
+		const myHeaders = new Headers();
+		myHeaders.append('MW_USERNAME', 'hip-efesmobilesuperuser');
+		myHeaders.append('MW_PASSWORD', '9JnpczyhcR2dfPDpKf5zQLu58bdCPrpv');
+		myHeaders.append('Content-Type', 'application/json');
+
+		const raw = JSON.stringify({
+			header: {
+				transactionId: '687213a2-eac3-4b88-88b2-aaa22106fe03',
+				messageId: 0,
+				action: 'KA_SALESORDER_LOV_MATERIALS_QUERY',
+				resource: 'KA_SALESORDER_LOV_MATERIALS',
+				operation: 'READ',
+				createdDate: '2023-08-17T07:40:15.606Z',
+				callbackUrl: null,
+				agentId: null,
+				conversationId: null,
+				correlationId: null,
+			},
+			body: {
+				kaSalesorderLovMaterials: {
+					language: 'tr',
+					customerSelection: {
+						customerNumber: '0000280025',
+						language: 'tr',
+						type: 'S',
+					},
+				},
+			},
+		});
+
+		const requestOptions = {
+			method: 'POST',
+			headers: myHeaders,
+			body: raw,
+			redirect: 'follow',
+		};
+
+		const response = await fetch(
+			'https://qa.anadoluefes.com/salesorderlov/keyaccount/material',
+			requestOptions
+		);
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error('API verileri alınamadı:', error);
+		return null;
+	}
+};
+
 const SellerDistributorStocks = () => {
 	const sectionListRef = useRef(null);
 	const [isButtonVisible, setIsButtonVisible] = useState(false);
 	const pulseAnimation = useRef(new Animated.Value(1)).current;
+	const [materialLists, setMaterialLists] = useState([]);
 
 	const handleScroll = event => {
 		const yOffset = event.nativeEvent.contentOffset.y;
@@ -28,332 +83,65 @@ const SellerDistributorStocks = () => {
 			setIsButtonVisible(false);
 		}
 	};
+
 	const handlePress = () => {
-		if (sectionListRef.current) {
+		if (sectionListRef.current)
 			sectionListRef.current.scrollToLocation({
 				sectionIndex: 0,
 				itemIndex: 0,
 			});
 
-			Animated.sequence([
-				Animated.timing(pulseAnimation, {
-					toValue: 1.2,
-					duration: 200,
-					useNativeDriver: false,
-					easing: Easing.linear,
-				}),
-				Animated.timing(pulseAnimation, {
-					toValue: 1,
-					duration: 200,
-					useNativeDriver: false,
-					easing: Easing.linear,
-				}),
-			]).start();
-		}
+		Animated.sequence([
+			Animated.timing(pulseAnimation, {
+				toValue: 1.2,
+				duration: 200,
+				useNativeDriver: false,
+				easing: Easing.linear,
+			}),
+			Animated.timing(pulseAnimation, {
+				toValue: 1,
+				duration: 200,
+				useNativeDriver: false,
+				easing: Easing.linear,
+			}),
+		]).start();
 	};
 
-	const sections = [
-		{
-			title: 'Efes Pilsen',
+	useEffect(() => {
+		fetchDataFromApi()
+			.then(data => {
+				if (data && data.body.kaSalesorderLovMaterialsResult.materialLists) {
+					const materialLists =
+						data.body.kaSalesorderLovMaterialsResult.materialLists.map(
+							item => ({
+								...item,
+								materialNumber: removeLeadingZeros(item.materialNumber),
+							})
+						);
+					setMaterialLists(materialLists);
+				} else {
+					console.log('Veriler bulunamadı.');
+				}
+			})
+			.catch(error => {
+				console.error('Veri çekme hatası:', error);
+			});
+	}, []);
+
+	const sections = materialLists.map(material => {
+		return {
+			title: material.goodsGroupDescription,
 			data: [
 				{
-					productCode: '150003',
-					productFullName: 'EFES PİLSEN KAS 50 CL',
-					type: 'STEINIE RB',
-					stock: 216,
-					gelKan: 180,
-				},
-				{
-					productCode: '150008',
-					productFullName: 'EFES PİLSEN KL 33 CL NRB',
-					stock: 84,
-					gelKan: 123,
-				},
-			],
-		},
-		{
-			title: 'Miller Genuine Draft',
-			data: [
-				{
-					productCode: '150137',
-					productFullName: 'MGD KL 33 CL NRB',
-					stock: 46,
-					gelKan: 11,
-				},
-				{
-					productCode: '150138',
-					productFullName: 'MGD KL 33 CL NRB 4*6 MP',
-					stock: 3,
+					productCode: material.materialNumber,
+					productFullName: material.materialDescription,
+					stock: 0,
 					gelKan: 0,
 				},
 			],
-		},
-		{
-			title: "Beck's",
-			data: [
-				{
-					productCode: '150284',
-					productFullName: 'BECKS KL 33 CL NRB',
-					stock: 30,
-					gelKan: 21,
-				},
-				{
-					productCode: '150292',
-					productFullName: 'BECKS TVA 50 CL KTU',
-					stock: 60,
-					gelKan: 69,
-				},
-			],
-		},
-		{
-			title: 'Section 4',
-			data: [
-				{
-					productCode: '123456',
-					productFullName: 'Product 1',
-					type: 'Type 1',
-					stock: 100,
-					gelKan: 50,
-				},
-				{
-					productCode: '7891011',
-					productFullName: 'Product 2',
-					type: 'Type 2',
-					stock: 75,
-					gelKan: 25,
-				},
-			],
-		},
-		{
-			title: 'Section 5',
-			data: [
-				{
-					productCode: '111213',
-					productFullName: 'Product 3',
-					type: 'Type 3',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '141516',
-					productFullName: 'Product 4',
-					type: 'Type 4',
-					stock: 50,
-					gelKan: 10,
-				},
-			],
-		},
-		{
-			title: 'Section 6',
-			data: [
-				{
-					productCode: '171819',
-					productFullName: 'Product 5',
-					type: 'Type 5',
-					stock: 300,
-					gelKan: 150,
-				},
-				{
-					productCode: '202122',
-					productFullName: 'Product 6',
-					type: 'Type 6',
-					stock: 25,
-					gelKan: 5,
-				},
-			],
-		},
-		{
-			title: 'Section 7',
-			data: [
-				{
-					productCode: '232425',
-					productFullName: 'Product 7',
-					type: 'Type 7',
-					stock: 75,
-					gelKan: 20,
-				},
-				{
-					productCode: '262728',
-					productFullName: 'Product 8',
-					type: 'Type 8',
-					stock: 125,
-					gelKan: 60,
-				},
-			],
-		},
-		{
-			title: 'Section 8',
-			data: [
-				{
-					productCode: '293031',
-					productFullName: 'Product 9',
-					type: 'Type 9',
-					stock: 150,
-					gelKan: 70,
-				},
-				{
-					productCode: '323334',
-					productFullName: 'Product 10',
-					type: 'Type 10',
-					stock: 45,
-					gelKan: 15,
-				},
-			],
-		},
-		{
-			title: 'Section 9',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-			],
-		},
-		{
-			title: 'Section 10',
-			data: [
-				{
-					productCode: '414243',
-					productFullName: 'Product 13',
-					type: 'Type 13',
-					stock: 300,
-					gelKan: 150,
-				},
-				{
-					productCode: '444546',
-					productFullName: 'Product 14',
-					type: 'Type 14',
-					stock: 40,
-					gelKan: 10,
-				},
-			],
-			
-		},
-		{
-			title: 'Section 11',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-			],
-		},
-		{
-			title: 'Section 12',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-			],
-		},
-		{
-			title: 'Section 13',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-					type: 'Type 11',
-					stock: 200,
-					gelKan: 100,
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-					type: 'Type 12',
-					stock: 85,
-					gelKan: 30,
-				},
-			],
-		},
-		
-	];
+		};
+	});
+	
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
