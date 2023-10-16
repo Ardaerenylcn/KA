@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import React, { useRef } from 'react';
+import React from 'react';
 import colors from '../constants/colors';
 import distances from '../constants/distances';
 import fonts from '../constants/fonts';
