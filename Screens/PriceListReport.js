@@ -12,7 +12,7 @@ import {
 	Animated,
 	Easing,
 	SafeAreaView,
-	FlatList,
+	SectionList,
 } from 'react-native';
 
 const PriceListReport = () => {
@@ -20,7 +20,7 @@ const PriceListReport = () => {
 	const [isButtonVisible, setIsButtonVisible] = useState(false);
 	const pulseAnimation = useRef(new Animated.Value(1)).current;
 	const [price, setPrice] = useState([]);
-	const [groupedPrice, setGroupedPrice] = useState({});
+	const [groupedPrice, setGroupedPrice] = useState([]);
 
 	useEffect(() => {
 		priceListQueryAction();
@@ -35,7 +35,7 @@ const PriceListReport = () => {
 			const groupedData = groupDataByGoodsGroup(priceData);
 			setGroupedPrice(groupedData);
 		} catch (error) {
-			console.log('', error);
+			console.log(error);
 		}
 	};
 
@@ -51,8 +51,8 @@ const PriceListReport = () => {
 		/>
 	);
 
-	const renderHeader = goodsGroupCodeText => (
-		<PriceListReportHeadComponent product={goodsGroupCodeText} />
+	const renderSectionHeader = ({ section }) => (
+		<PriceListReportHeadComponent product={section.title} />
 	);
 
 	const handleScroll = event => {
@@ -66,7 +66,11 @@ const PriceListReport = () => {
 
 	const handlePress = () => {
 		if (sectionListRef.current) {
-			sectionListRef.current.scrollToOffset({ offset: 0, animated: true });
+			sectionListRef.current.scrollToLocation({
+				animated: true,
+				sectionIndex: 0,
+				itemIndex: 0,
+			});
 
 			Animated.sequence([
 				Animated.timing(pulseAnimation, {
@@ -86,15 +90,19 @@ const PriceListReport = () => {
 	};
 
 	const groupDataByGoodsGroup = data => {
-		const groupedData = {};
-		data.forEach(item => {
+		const groupedData = data.reduce((grouped, item) => {
 			const goodsGroupCode = item.goodsGroupCodeText;
-			if (!groupedData[goodsGroupCode]) {
-				groupedData[goodsGroupCode] = [];
+			if (!grouped[goodsGroupCode]) {
+				grouped[goodsGroupCode] = [];
 			}
-			groupedData[goodsGroupCode].push(item);
-		});
-		return groupedData;
+			grouped[goodsGroupCode].push(item);
+			return grouped;
+		}, {});
+		const groupedArray = Object.keys(groupedData).map(goodsGroupCodeText => ({
+			title: goodsGroupCodeText,
+			data: groupedData[goodsGroupCodeText],
+		}));
+		return groupedArray;
 	};
 
 	return (
@@ -112,27 +120,12 @@ const PriceListReport = () => {
 						/>
 					</TouchableOpacity>
 				)}
-				<FlatList
+				<SectionList
 					ref={sectionListRef}
-					data={Object.keys(groupedPrice)}
-					keyExtractor={item => item}
-					renderItem={({ item }) => (
-						<>
-							{renderHeader(item)}
-							{groupedPrice[item].map((subItem, index) => (
-								<PriceListPerportBodyComponent
-									key={index}
-									productCode={subItem.materialNumber.replace(/^0+/, '')}
-									productFullName={subItem.materialDescription}
-									closePriceVatExc={subItem.closeChannelRecPriceVATFree}
-									closePriceVatInc={subItem.closeChannelRecPriceVAT}
-									openPriceVatExc={subItem.openChannelRecPriceVATFree}
-									openPriceVatInc={subItem.openChannelRecPriceVAT}
-									pera={subItem.currency}
-								/>
-							))}
-						</>
-					)}
+					sections={groupedPrice}
+					keyExtractor={(item, index) => item + index}
+					renderSectionHeader={renderSectionHeader}
+					renderItem={renderItem}
 					onScroll={handleScroll}
 				/>
 			</View>
