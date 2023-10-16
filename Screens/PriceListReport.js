@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-
+import React, { useRef, useState, useEffect } from 'react';
+import { priceListQuery } from '../network/services/appServices';
 import PriceListPerportBodyComponent from '../component/PriceListReportBodyComponent';
 import PriceListReportHeadComponent from '../component/PriceListReportHeadComponent';
 import colors from '../constants/colors';
@@ -12,13 +12,48 @@ import {
 	Animated,
 	Easing,
 	SafeAreaView,
-	SectionList,
+	FlatList,
 } from 'react-native';
 
 const PriceListReport = () => {
 	const sectionListRef = useRef(null);
 	const [isButtonVisible, setIsButtonVisible] = useState(false);
 	const pulseAnimation = useRef(new Animated.Value(1)).current;
+	const [price, setPrice] = useState([]);
+	const [groupedPrice, setGroupedPrice] = useState({});
+
+	useEffect(() => {
+		priceListQueryAction();
+	}, []);
+
+	const priceListQueryAction = async () => {
+		try {
+			const responsePrice = await priceListQuery();
+			const priceData = responsePrice.data.body.reports;
+			setPrice(priceData);
+
+			const groupedData = groupDataByGoodsGroup(priceData);
+			setGroupedPrice(groupedData);
+		} catch (error) {
+			console.log('', error);
+		}
+	};
+
+	const renderItem = ({ item }) => (
+		<PriceListPerportBodyComponent
+			productCode={item.materialNumber.replace(/^0+/, '')}
+			productFullName={item.materialDescription}
+			closePriceVatExc={item.closeChannelRecPriceVATFree}
+			closePriceVatInc={item.closeChannelRecPriceVAT}
+			openPriceVatExc={item.openChannelRecPriceVATFree}
+			openPriceVatInc={item.openChannelRecPriceVAT}
+			pera={item.currency}
+		/>
+	);
+
+	const renderHeader = goodsGroupCodeText => (
+		<PriceListReportHeadComponent product={goodsGroupCodeText} />
+	);
 
 	const handleScroll = event => {
 		const yOffset = event.nativeEvent.contentOffset.y;
@@ -28,12 +63,10 @@ const PriceListReport = () => {
 			setIsButtonVisible(false);
 		}
 	};
+
 	const handlePress = () => {
 		if (sectionListRef.current) {
-			sectionListRef.current.scrollToLocation({
-				sectionIndex: 0,
-				itemIndex: 0,
-			});
+			sectionListRef.current.scrollToOffset({ offset: 0, animated: true });
 
 			Animated.sequence([
 				Animated.timing(pulseAnimation, {
@@ -52,229 +85,17 @@ const PriceListReport = () => {
 		}
 	};
 
-	const sections = [
-		{
-			title: 'Efes Pilsen',
-			data: [
-				{
-					productCode: '150003',
-					productFullName: 'EFES PİLSEN KAS 50 CL STEINIE RB ',
-					closePriceVatInc: '1038,00',
-					closePriceVatExc: '865,123',
-					openPriceVatExc: '723,36',
-					openPriceVatInc: '868,03',
-					pera: '8,33',
-				},
-				{
-					productCode: '150008',
-					productFullName: 'EFES PİLSEN KL 33 CL NRB',
-					closePriceVatInc: '1038,00',
-					closePriceVatExc: '865,123',
-					openPriceVatExc: '723,36',
-					openPriceVatInc: '868,03',
-					pera: '8,33',
-				},
-			],
-		},
-		{
-			title: 'Miller Genuine Draft',
-			data: [
-				{
-					productCode: '150137',
-					productFullName: 'MGD KL 33 CL NRB',
-					closePriceVatInc: '1038,00',
-					closePriceVatExc: '865,123',
-					openPriceVatExc: '723,36',
-					openPriceVatInc: '868,03',
-					pera: '8,33',
-				},
-				{
-					productCode: '150138',
-					productFullName: 'MGD KL 33 CL NRB 4*6 MP',
-					closePriceVatInc: '1038,00',
-					closePriceVatExc: '865,123',
-					openPriceVatExc: '723,36',
-					openPriceVatInc: '868,03',
-					pera: '8,33',
-				},
-			],
-		},
-		{
-			title: "Beck's",
-			data: [
-				{
-					productCode: '150284',
-					productFullName: 'BECKS KL 33 CL NRB',
-				},
-				{
-					productCode: '150292',
-					productFullName: 'BECKS TVA 50 CL KTU',
-				},
-			],
-		},
-		{
-			title: 'Section 4',
-			data: [
-				{
-					productCode: '123456',
-					productFullName: 'Product 1',
-				},
-				{
-					productCode: '7891011',
-					productFullName: 'Product 2',
-				},
-			],
-		},
-		{
-			title: 'Section 5',
-			data: [
-				{
-					productCode: '111213',
-					productFullName: 'Product 3',
-				},
-				{
-					productCode: '141516',
-					productFullName: 'Product 4',
-				},
-			],
-		},
-		{
-			title: 'Section 6',
-			data: [
-				{
-					productCode: '171819',
-					productFullName: 'Product 5',
-				},
-				{
-					productCode: '202122',
-					productFullName: 'Product 6',
-				},
-			],
-		},
-		{
-			title: 'Section 7',
-			data: [
-				{
-					productCode: '232425',
-					productFullName: 'Product 7',
-				},
-				{
-					productCode: '262728',
-					productFullName: 'Product 8',
-				},
-			],
-		},
-		{
-			title: 'Section 8',
-			data: [
-				{
-					productCode: '293031',
-					productFullName: 'Product 9',
-				},
-				{
-					productCode: '323334',
-					productFullName: 'Product 10',
-				},
-			],
-		},
-		{
-			title: 'Section 9',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-			],
-		},
-		{
-			title: 'Section 10',
-			data: [
-				{
-					productCode: '414243',
-					productFullName: 'Product 13',
-				},
-				{
-					productCode: '444546',
-					productFullName: 'Product 14',
-				},
-			],
-		},
-		{
-			title: 'Section 11',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-			],
-		},
-		{
-			title: 'Section 12',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-			],
-		},
-		{
-			title: 'Section 13',
-			data: [
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-				{
-					productCode: '353637',
-					productFullName: 'Product 11',
-				},
-				{
-					productCode: '383940',
-					productFullName: 'Product 12',
-				},
-			],
-		},
-	];
+	const groupDataByGoodsGroup = data => {
+		const groupedData = {};
+		data.forEach(item => {
+			const goodsGroupCode = item.goodsGroupCodeText;
+			if (!groupedData[goodsGroupCode]) {
+				groupedData[goodsGroupCode] = [];
+			}
+			groupedData[goodsGroupCode].push(item);
+		});
+		return groupedData;
+	};
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
@@ -291,26 +112,28 @@ const PriceListReport = () => {
 						/>
 					</TouchableOpacity>
 				)}
-
-				<SectionList
+				<FlatList
 					ref={sectionListRef}
-					onScroll={handleScroll}
-					sections={sections}
-					keyExtractor={(item, index) => item.productCode + index}
+					data={Object.keys(groupedPrice)}
+					keyExtractor={item => item}
 					renderItem={({ item }) => (
-						<PriceListPerportBodyComponent
-							productCode={item.productCode}
-							productFullName={item.productFullName}
-							closePriceVatExc={item.closePriceVatExc}
-							closePriceVatInc={item.closePriceVatInc}
-							openPriceVatExc={item.openPriceVatExc}
-							openPriceVatInc={item.openPriceVatInc}
-							pera={item.pera}
-						/>
+						<>
+							{renderHeader(item)}
+							{groupedPrice[item].map((subItem, index) => (
+								<PriceListPerportBodyComponent
+									key={index}
+									productCode={subItem.materialNumber.replace(/^0+/, '')}
+									productFullName={subItem.materialDescription}
+									closePriceVatExc={subItem.closeChannelRecPriceVATFree}
+									closePriceVatInc={subItem.closeChannelRecPriceVAT}
+									openPriceVatExc={subItem.openChannelRecPriceVATFree}
+									openPriceVatInc={subItem.openChannelRecPriceVAT}
+									pera={subItem.currency}
+								/>
+							))}
+						</>
 					)}
-					renderSectionHeader={({ section: { title } }) => (
-						<PriceListReportHeadComponent product={title} />
-					)}
+					onScroll={handleScroll}
 				/>
 			</View>
 		</SafeAreaView>
