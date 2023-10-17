@@ -14,5 +14,8 @@ export default {
 	API_RETURNORDER_LOV_QUERY: 'returnorderlov/keyaccount/lov',
 	//
 	API_PRİCELİST: 'mobile/priceListReport/query',
+	API_STOCK_QUERY:'factory/stock/report/query',
+	//
 	API_CREDIT_RISK: 'credit/risk',
+	
 };
